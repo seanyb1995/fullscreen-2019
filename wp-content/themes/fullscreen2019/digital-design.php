@@ -23,14 +23,14 @@ get_header();
               $field = get_field_object($field_key);
 
               if( $field ) {
-                echo '<select id="brands" name="brands" class="brands" autocomplete="off">';
+                echo '<select name="specialisation">';
 
-                echo '<option value="-1">All</option>';
+                echo '<option>All</option>';
 
                 foreach( $field['choices'] as $k => $v ) {
                   echo '<option value="' . $k . '"';
 
-                  if ( $k == $brand ) {
+                  if ( $k == $specialisation ) {
                     echo ' selected';
                   }
                   echo '>' . $v . '</option>';
@@ -42,7 +42,7 @@ get_header();
           <input type="hidden" name="action" value="ddgfilter">
         </form>
         
-        <div id="response"></div>
+        <div id="graduates"></div>
         
       </section>
 		</main><!-- #main -->

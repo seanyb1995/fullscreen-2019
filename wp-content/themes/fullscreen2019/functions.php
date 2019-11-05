@@ -44,7 +44,7 @@ if ( ! function_exists( 'fullscreen2019_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'fullscreen2019' ),
+			'primary' => esc_html__( 'Primary', 'fullscreen2019' ),
 		) );
 
 		/*
@@ -139,6 +139,79 @@ function fullscreen2019_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'fullscreen2019_scripts' );
+
+/**
+ * Bootstrap nav menu.
+ */
+function create_bootstrap_menu( $theme_location ) {
+    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+         
+      if( $theme_location == 'primary' ) {
+        
+        $menu_list  = '<nav class="navbar navbar-dark navbar-expand-lg precision-site-navigation">' ."\n";
+        $menu_list .= '<div class="container-fluid">' ."\n";
+      
+          $menu_list .= '<a class="navbar-brand precision-custom-logo-constraints" href="' . home_url() . '" rel="home">' . wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' ) . '</a>';
+          $menu_list .= '<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">' ."\n";
+          $menu_list .= '<span class="navbar-toggler-icon"></span>' ."\n";
+          $menu_list .= '</button>' ."\n";
+          $menu = get_term( $locations[$theme_location], 'nav_menu' );
+          $menu_items = wp_get_nav_menu_items($menu->term_id);
+          $menu_list .= '<div class="collapse navbar-collapse navbar-nav" id="navbarSupportedContent">' ."\n";
+          $menu_list .= '<ul class="navbar-nav ml-auto precision-mr-auto">' ."\n";
+          foreach( $menu_items as $menu_item ) {
+              if( $menu_item->menu_item_parent == 0 ) {
+                  $parent = $menu_item->ID;
+                
+                  $bool = false;
+                  $menu_array = array();
+                  foreach( $menu_items as $submenu ) {
+                      if( $submenu->menu_item_parent == $parent ) {
+                          $bool = true;
+                          $menu_array[] = '<a class="dropdown-item" href="' . $submenu->url . '">' . $submenu->title . '</a>' ."\n";
+                      }
+                  }
+                  if( $bool == true && count( $menu_array ) > 0 ) {
+                      $menu_list .= '<li class="nav-item dropdown">' ."\n";
+                      $menu_list .= '<a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $menu_item->title . ' <span class="caret"></span></a>' ."\n";
+                      $menu_list .= '<div class="dropdown-menu" aria-labelledby="navbarDropdown">' ."\n";
+                      $menu_list .= implode( "\n", $menu_array );
+                      $menu_list .= '</div>' ."\n";
+                  } else {
+                      $menu_list .= '<li class="nav-item">' ."\n";
+                      $menu_list .= '<a href="' . $menu_item->url . '" class="nav-link text-white">' . $menu_item->title . '</a>' ."\n";
+                  }
+              }
+              // end <li>
+              $menu_list .= '</li>' ."\n";
+          }
+          $menu_list .= '</ul>' ."\n";
+          $menu_list .= '<button class="call-to-action-button modaal-inline precision-mobile-nav-button">Book Online</button>' ."\n";
+          $menu_list .= '</div>' ."\n";
+          $menu_list .= '</div><!-- /.container -->' ."\n";
+          $menu_list .= '</nav>' ."\n";
+        } else {
+            $menu_list = '<!-- no menu (1) defined in location "'.$theme_location.'" -->';
+        }
+      
+      } else {
+          $menu_list = '<!-- no menu (2) defined in location "'.$theme_location.'" -->';
+      }
+      echo $menu_list;
+      //echo $locations;
+//       print_r($locations);
+//    $locations = get_theme_mod( 'nav_menu_locations' );
+// print_r($locations);
+//       if ( isset($locations[$theme_location]) ) {
+//         echo 'yes';
+//       } 
+//       else {
+//         echo 'no';
+//       }
+      //echo $locations['Primary'];
+  
+  //if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+}
 
 /**
  * Implement the Custom Header feature.

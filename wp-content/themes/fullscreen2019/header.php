@@ -25,12 +25,16 @@
 
 	<header id="masthead" class="site-header">
     
-    <div class="fullscreen-header">
+<!--     <div class="fullscreen-header">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-top-margin">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <?php the_custom_logo(); ?>
+        
+        <div class="navbar-brand">
+          <?php //the_custom_logo(); ?>
+        </div>
+       
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -50,7 +54,9 @@
           </form>
         </div>
       </nav>
-    </div>
+    </div> -->
+    
+    <?php create_bootstrap_menu("primary"); ?><!-- #site-navigation -->
     
 	</header><!-- #masthead -->
 
