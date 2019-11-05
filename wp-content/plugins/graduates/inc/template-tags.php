@@ -36,7 +36,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_graduates_filter_function'
     $args = array(
       'post_type'		=> 'graduates',
       'meta_key'		=> 'digital_design_specialisation',
-      'meta_value'	=> array('Front End Development')
+      'meta_value'	=> array('Front End Development', 'Full-Stack Developer')
     );
     }
     

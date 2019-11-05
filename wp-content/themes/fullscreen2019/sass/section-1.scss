@@ -14,5 +14,15 @@
     background-position: center top;
     background-size: 1920px 1080px;
     background-repeat: repeat-x;
+    
+    img {
+      position:absolute;
+      bottom:0px;
+      width:110%;
+    }
+  }
+  
+  &-mountains {
+    
   }
 }

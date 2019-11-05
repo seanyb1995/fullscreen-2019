@@ -23,7 +23,7 @@ get_header();
               if( $field ) {
                 echo '<select name="specialisation">';
 
-                echo '<option>All</option>';
+                echo '<option value="">All</option>';
 
                 foreach( $field['choices'] as $k => $v ) {
                   echo '<option value="' . $k . '"';

@@ -21,6 +21,8 @@ get_header();
       <section class="section-1">
 
         <div class="section-1-stars">
+          
+          <img src="<?php echo get_template_directory_uri() ?>/images/mountain.svg" alt="Mountains"/>
 
         </div>
 
