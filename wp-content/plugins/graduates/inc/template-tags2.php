@@ -12,37 +12,15 @@ if ( !function_exists( 'graduates' ) ) {
   function graduates() {
       
     // if any filters are set 
-  
-    $specialisation = $_POST['specialisation'];
-  
-    // setup the parameters for the query
-    $tax_query = "";
-    /*
-        if category is not empty, then filter must be active
-        set var $tax_query to be used in out final WP query
-        for the product post
-    */
-
-    if( $specialisation !=""){
-    $args = array(
-      'numberposts'	=> -1,
-      'post_type'		=> 'post',
-      'meta_key'		=> 'digital_design_specialisation',
-      'meta_value'	=> $specialisation
-    );
-      
-    }else{
-      
-    $args = array(
-      'numberposts'	=> -1,
-      'post_type'		=> 'post',
-      'meta_key'		=> 'digital_design_specialisation',
-      'meta_value'	=> array('Front End Development', 'Back End Development', 'UI/UX Designer', 'Full-Stack Developer')
-    );
+//     $specialisation = $_POST['specialisation'];
         
     // else, just query all posts as normal (no filtering)
+    $args = array(
+      'post_type'		=> 'graduates',
+      'meta_key'		=> 'digital_design_specialisation',
+      'meta_value'	=> 'Front End Development'
+    );
     
-  
   $graduates = new WP_Query($args);
   if( $graduates->have_posts() ): ?>
     <?php while($graduates->have_posts()): $graduates->the_post(); ?>
@@ -72,4 +50,5 @@ if ( !function_exists( 'graduates' ) ) {
   <?php
   }
 }
-}
+
+?>

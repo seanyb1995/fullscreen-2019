@@ -1,0 +1,59 @@
+.call-to-action-button {
+  position: relative;
+  background:$secondary-color;
+  border-radius:50px;
+  color:white;
+  //border:2px solid white;
+  border:0px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight:400;
+  font-size:14px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.4s;
+  line-height: 21px !important;
+  
+  &:visited {
+    color:white;
+  }
+
+  &:after {
+    content:'\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 10px;
+    right: 0px;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    background:$yellow-primary;
+    padding-right: 32px;
+    transform:translateX(1%);
+    color:white;
+    //border:2px solid $yellow-primary;
+
+    &:after {
+      opacity: 1;
+      right: 14px;
+      -webkit-animation: arrow-bounce 1s infinite; /* Safari 4.0 - 8.0 */
+      animation: arrow-bounce 1s infinite;
+      
+      @keyframes arrow-bounce {
+        0%   {transform:translateX(0px);}
+        10%  {transform:translateX(0px);}
+        20%  {transform:translateX(-1px);}
+        30%  {transform:translateX(-1px);}
+        40%  {transform:translateX(-2px);}
+        50%  {transform:translateX(-5px);}
+        60%  {transform:translateX(-2px);}
+        70%  {transform:translateX(-1px);}
+        80%  {transform:translateX(-1px);}
+        90%  {transform:translateX(0px);}
+        100% {transform:translateX(0px);}
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Template Name: Digital Design
  *
@@ -14,8 +14,6 @@ get_header();
 		<main id="main" class="site-main">
       <!--testing environment-->
       <section class="test-environment">
-        
-        <?php // graduates(); ?>
         
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
           <?php
@@ -39,7 +37,7 @@ get_header();
                 echo '</select>';
               }
           ?>
-          <input type="hidden" name="action" value="ddgfilter">
+          <input type="hidden" name="action" value="myfilter">
         </form>
         
         <div id="graduates"></div>

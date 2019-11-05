@@ -5,21 +5,42 @@
  * to output some HTML for each product with a heading and link.
  * A dropdown appears allowing the front-end user to filter by the category taxonomy
 */
-// add_action('wp_ajax_ddgfilter', 'digital_design_gradautes_filter_function'); // wp_ajax_{ACTION HERE}
-// add_action('wp_ajax_nopriv_ddgfilter', 'digital_design_graduates_filter_function');
+add_action('wp_ajax_myfilter', 'digital_design_gradautes_filter_function'); // wp_ajax_{ACTION HERE}
+add_action('wp_ajax_nopriv_myfilter', 'digital_design_graduates_filter_function');
 
-if ( !function_exists( 'graduates' ) ) {
-  function graduates() {
+  function digital_design_gradautes_filter_function() {
       
     // if any filters are set 
+  
+    $specialisation = $_POST['specialisation'];
+  
+    // setup the parameters for the query
+    $tax_query = "";
+    /*
+        if category is not empty, then filter must be active
+        set var $tax_query to be used in out final WP query
+        for the product post
+    */
+       
+    
+    if( $specialisation !=""){
+    $args = array(
+      'post_type'		=> 'graduates',
+      'meta_key'		=> 'digital_design_specialisation',
+      'meta_value'	=> $specialisation
+    );
+      
+    }else{
         
     // else, just query all posts as normal (no filtering)
     $args = array(
       'post_type'		=> 'graduates',
       'meta_key'		=> 'digital_design_specialisation',
-      'meta_value'	=> 'Front End Development'
+      'meta_value'	=> array('Front End Development')
     );
+    }
     
+  
   $graduates = new WP_Query($args);
   if( $graduates->have_posts() ): ?>
     <?php while($graduates->have_posts()): $graduates->the_post(); ?>
@@ -48,4 +69,4 @@ if ( !function_exists( 'graduates' ) ) {
   <?php endif ?>
   <?php
   }
-}
+

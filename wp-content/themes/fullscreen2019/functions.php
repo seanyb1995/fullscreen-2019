@@ -125,6 +125,8 @@ function fullscreen2019_scripts() {
   wp_enqueue_style( 'fullscreen2019-style', get_template_directory_uri() . '/css/stylesheet.min.css' );
   
   wp_enqueue_style( 'bootstrap4', get_template_directory_uri() . '/css/Bootstrap/bootstrap.min.css' ); //BOOTSTRAP
+  
+  wp_enqueue_script('jquery', false, array(), false, false);
 
 	wp_enqueue_script( 'fullscreen2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -148,16 +150,19 @@ function create_bootstrap_menu( $theme_location ) {
          
       if( $theme_location == 'primary' ) {
         
-        $menu_list  = '<nav class="navbar navbar-dark navbar-expand-lg precision-site-navigation">' ."\n";
+        $menu_list  = '<nav class="navbar navbar-dark navbar-expand-lg fullscreen-site-navigation">' ."\n";
         $menu_list .= '<div class="container-fluid">' ."\n";
       
-          $menu_list .= '<a class="navbar-brand precision-custom-logo-constraints" href="' . home_url() . '" rel="home">' . wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' ) . '</a>';
+          $menu_list .= '<a class="navbar-brand fullscreen-custom-logo-constraints" href="' . home_url() . '" rel="home">' . wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' ) . '</a>';
           $menu_list .= '<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">' ."\n";
-          $menu_list .= '<span class="navbar-toggler-icon"></span>' ."\n";
+          $menu_list .= '<span class="sr-only">Toggle navigation</span>' ."\n";
+          $menu_list .= '<span class="icon-bar"></span>' ."\n";
+          $menu_list .= '<span class="icon-bar"></span>' ."\n";
+          $menu_list .= '<span class="icon-bar"></span>' ."\n";
           $menu_list .= '</button>' ."\n";
           $menu = get_term( $locations[$theme_location], 'nav_menu' );
           $menu_items = wp_get_nav_menu_items($menu->term_id);
-          $menu_list .= '<div class="collapse navbar-collapse navbar-nav" id="navbarSupportedContent">' ."\n";
+          $menu_list .= '<div class="collapse navbar-collapse" id="navbarSupportedContent">' ."\n";
           $menu_list .= '<ul class="navbar-nav ml-auto precision-mr-auto">' ."\n";
           foreach( $menu_items as $menu_item ) {
               if( $menu_item->menu_item_parent == 0 ) {
@@ -186,7 +191,6 @@ function create_bootstrap_menu( $theme_location ) {
               $menu_list .= '</li>' ."\n";
           }
           $menu_list .= '</ul>' ."\n";
-          $menu_list .= '<button class="call-to-action-button modaal-inline precision-mobile-nav-button">Book Online</button>' ."\n";
           $menu_list .= '</div>' ."\n";
           $menu_list .= '</div><!-- /.container -->' ."\n";
           $menu_list .= '</nav>' ."\n";
@@ -198,19 +202,6 @@ function create_bootstrap_menu( $theme_location ) {
           $menu_list = '<!-- no menu (2) defined in location "'.$theme_location.'" -->';
       }
       echo $menu_list;
-      //echo $locations;
-//       print_r($locations);
-//    $locations = get_theme_mod( 'nav_menu_locations' );
-// print_r($locations);
-//       if ( isset($locations[$theme_location]) ) {
-//         echo 'yes';
-//       } 
-//       else {
-//         echo 'no';
-//       }
-      //echo $locations['Primary'];
-  
-  //if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
 }
 
 /**
