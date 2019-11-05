@@ -1,10 +1,10 @@
 /*!
 Name: Fullscreen 2019
-To compile sass go to the SSH Terminal (Right click precision physio) and type in the following command ~ 
-sass --watch wp-content/themes/fullscreen2019/sass/stylesheet.scss:wp-content/themes/fullscreen2019/css/stylesheet.css --style compressed
+To compile sass go to the SSH Terminal (Right click fullscreen2019 physio) and type in the following command ~ 
+sass --watch wp-content/themes/fullscreen2019/sass/stylesheet.min.scss:wp-content/themes/fullscreen2019/css/stylesheet.min.css --style compressed
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 NOTE: DO NOT EDIT IF IN CSS FILE: See sass file
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*//*# sourceMappingURL=stylesheet.min.css.map */
+*/.test-environment{display:grid;grid-template-columns:2fr 4fr 4fr 2fr;grid-template-rows:auto;min-height:100vh;height:1000px;max-height:1100px}/*# sourceMappingURL=stylesheet.min.css.map */
