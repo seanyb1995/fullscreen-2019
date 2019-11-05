@@ -19,7 +19,25 @@ if ( ! function_exists( 'graduates' ) ) {
     <?php while($graduates->have_posts()): $graduates->the_post(); ?>
       <div class="graduate">
         <h1><?php the_title(); ?></h1>
-        <p></p>
+        <?php 
+
+          $majors = get_field('major'); 
+
+          foreach ( $majors as $major ) :
+           
+            echo '<h3>' . $major .'</h3>';
+
+          endforeach;
+
+        ?>
+        <p>
+          <?php 
+                   
+            $specialisation = get_field_object('digital_design_specialisation'); 
+            echo $specialisation['value'];
+    
+          ?>
+        </p>
       </div>
     <?php endwhile ?>
   <?php endif ?>
