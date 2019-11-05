@@ -20,8 +20,10 @@ $graduates_plugin_root_url = plugin_dir_url(__FILE__);
 /* --------------------------------------------------------------------------------
 * 0. Setup product post type and product taxonomy
 */
-require_once( $case_studies_plugin_root . 'inc/cpt-graduates.php' );
+require_once( $graduates_plugin_root . 'inc/cpt-graduates.php' );
+require_once( $graduates_plugin_root . 'inc/tax-major.php' );
 add_action('init', 'graduates_post_type');
+add_action('init', 'graduates_major_taxonomy');
 /*
  * 4. Template tags
  * Require our Template tags file which contains all the functions for our 

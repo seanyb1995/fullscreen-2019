@@ -19,25 +19,14 @@ get_header();
         
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
           <?php
-            $field_key = "field_5dc0eb0bb0adb"; // <-- Find this by turning on Field Keys under Screen Options in admin interface
-              $field = get_field_object($field_key);
+            if( $terms = get_terms( array( 'taxonomy' => 'category', 'orderby' => 'name' ) ) ) : 
 
-              if( $field ) {
-                echo '<select id="brands" name="brands" class="brands" autocomplete="off">';
-
-                echo '<option value="-1">All</option>';
-
-                foreach( $field['choices'] as $k => $v ) {
-                  echo '<option value="' . $k . '"';
-
-                  if ( $k == $brand ) {
-                    echo ' selected';
-                  }
-                  echo '>' . $v . '</option>';
-                }
-
-                echo '</select>';
-              }
+              echo '<select name="categoryfilter"><option value="">Select category...</option>';
+              foreach ( $terms as $term ) :
+                echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
+              endforeach;
+              echo '</select>';
+            endif;
           ?>
           <input type="hidden" name="action" value="ddgfilter">
         </form>

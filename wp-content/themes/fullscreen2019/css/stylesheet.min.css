@@ -7,4 +7,4 @@ sass --watch wp-content/themes/fullscreen2019/sass/stylesheet.min.scss:wp-conten
 NOTE: DO NOT EDIT IF IN CSS FILE: See sass file
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/.test-environment{display:grid;grid-template-columns:2fr 4fr 4fr 2fr;grid-template-rows:auto;min-height:100vh;height:1000px;max-height:1100px}/*# sourceMappingURL=stylesheet.min.css.map */
+*/#masthead .fullscreen-header{position:relative}#masthead .fullscreen-header .navbar-top-margin{top:auto;background:none}#primary #main .section-1{width:100vw;position:relative;height:690px;background-image:linear-gradient(black 10%, #090b3e, #dd676e 70%, #f0bfb9)}#primary #main .section-1-stars{position:relative;width:100%;height:100%;background-image:url("https://eamonmckiernan.com/wp-content/uploads/2019/11/stars-final.svg");background-position:center top;background-size:1920px 1080px;background-repeat:repeat-x}.test-environment{display:grid;grid-template-columns:2fr 4fr 4fr 2fr;grid-template-rows:auto;min-height:100vh;height:1000px;max-height:1100px}/*# sourceMappingURL=stylesheet.min.css.map */

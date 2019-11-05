@@ -9,61 +9,25 @@ add_action('wp_ajax_ddgfilter', 'digital_design_gradautes_filter_function'); // 
 add_action('wp_ajax_nopriv_ddgfilter', 'digital_design_graduates_filter_function');
 
   function graduates() {
-      
-    // if any filters are set 
-  
-    $major = $_POST['major'];
-  
-    // setup the parameters for the query
-    $tax_query = "";
-    /*
-        if category is not empty, then filter must be active
-        set var $tax_query to be used in out final WP query
-        for the product post
-    */
     
-    $digital_design_specialisation = array(
-        array(
-            'field' => 'digital_design_specialisation',
-        )
-    );
+  $filter = $_POST['specialisation'];
     
-    $tax_query_major = array(
-        array(
-            'taxonomy' => 'major',
-            'field' => 'name',
-            'terms' => $digital_design_specialisation
-        )
-    );
-
-    
-    if( $major !=""){
-    $args = array(
-        'post_type' => 'graduates',
-        'orderby' => 'menu_order',
-        'order' => 'ASC',
-        'tax_query' => $tax_query_major
-    );
-      
-    }else{
-        
-    // else, just query all posts as normal (no filtering)
-    $tax_query_major = array(
-        array(
-            'taxonomy' => 'major',
-            'field' => 'slug',
-            'terms' => 'digital_design'
-        )
-    );
-
-    $args = array(
-      'post_type' => 'graduates',
-      'orderby' => 'menu_order',
-      'order' => 'ASC',
-      'tax_query' => array (
-        $tax_query_major
+  $tax_query_major = array(
+      array(
+          'taxonomy' => 'major',
+          'field' => 'slug',
+          'terms' => 'digital_design'
       )
-    );
+  );
+    
+  $args = array(
+    'post_type' => 'graduates',
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+    'tax_query' => array (
+      $tax_query_major
+    )
+  );
   
   $graduates = new WP_Query($args);
   if( $graduates->have_posts() ): ?>
