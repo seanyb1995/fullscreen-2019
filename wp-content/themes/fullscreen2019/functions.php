@@ -120,7 +120,9 @@ add_action( 'widgets_init', 'fullscreen2019_widgets_init' );
  * Enqueue scripts and styles.
  */
 function fullscreen2019_scripts() {
-	wp_enqueue_style( 'fullscreen2019-style', get_stylesheet_uri() );
+// 	wp_enqueue_style( 'fullscreen2019-style', get_stylesheet_uri() );
+  
+  wp_enqueue_style( 'stylesheet.min', get_template_directory_uri() . '/css/style.min.css' );
 
 	wp_enqueue_script( 'fullscreen2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
