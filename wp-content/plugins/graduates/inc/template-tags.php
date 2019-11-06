@@ -78,16 +78,14 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     );   
       
     }elseif( $search !=""){
-     
-    print_r($search);
-    $args = array(
-        'post_type' => 'graduates',
-        'post_title' => 'Sean Buchanan',
-        'orderby' => 'menu_order',
-        'order' => 'ASC',
-    );   
+  
+      $args = array(
+          'post_type' => 'graduates',
+          'name' => $search,
+          'orderby' => 'menu_order',
+          'order' => 'ASC'
+        );   
       
-//       SELECT * FROM `wp_posts` WHERE `post_type` = 'graduates' AND `post_title` = 'Sean Buchanan' order by 'menu_order' asc 
  
     }else{
       // If no select is made show graduates specific to major
@@ -103,12 +101,8 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
             )
           )
         );
-    }
-      
-    
-      
+    }     
    
-    
   
   $graduates = new WP_Query($args);
   if( $graduates->have_posts() ): ?>

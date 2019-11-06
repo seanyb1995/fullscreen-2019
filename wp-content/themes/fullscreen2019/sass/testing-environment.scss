@@ -19,14 +19,4 @@ Testing Environment
     flex-direction: column;
   }
   
-  article {
-    grid-column: 2 / span 2;
-    grid-row: 2 / span 1;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-  }
-  
 }
