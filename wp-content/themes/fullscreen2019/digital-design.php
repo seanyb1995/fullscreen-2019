@@ -21,7 +21,7 @@ get_header();
               $field = get_field_object($field_key);
 
               if( $field ) {
-                echo '<select name="specialisation">';
+                echo '<select name="digital_design">';
 
                 echo '<option value="">All</option>';
 
@@ -37,6 +37,7 @@ get_header();
                 echo '</select>';
               }
           ?>
+          <input type="hidden" name="action" value="digital_design">
           <input type="hidden" name="action" value="myfilter">
         </form>
         

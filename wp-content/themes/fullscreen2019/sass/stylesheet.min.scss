@@ -79,15 +79,7 @@ NOTE: DO NOT EDIT IF IN CSS FILE: See sass file
         clear: both;
     }
 }
-@mixin diamond-animations($speed,$number,$time) {
-  -webkit-animation: diamond-bounce + $number $time infinite; /* Safari 4.0 - 8.0 */
-  animation: diamond-bounce + $number $time infinite;
-  @keyframes diamond-bounce#{$number} {
-    0%   {transform:translateY(0%) rotate(45deg);}
-    50%  {transform:translateY($speed) rotate(45deg);}
-    100% {transform:translateY(0%) rotate(45deg);}
-  }
-}
+
 /*-------------------------------------------------------------
 # Functions
 --------------------------------------------------------------*/
@@ -114,6 +106,8 @@ $yellow-primary:#f4c032; //Light yellow
 $purple-primary:#5d61a2; //purple
 $grey-primary:#f7f7f7; //light grey
 $footer-color:#163E57; //dark dark blue
+
+$blue-glow:#00b4ff; //Light blue for bottom div
 /*-------------------------------------------------------------
 Fonts
 --------------------------------------------------------------*/

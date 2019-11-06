@@ -21,7 +21,7 @@ get_header();
               $field = get_field_object($field_key);
 
               if( $field ) {
-                echo '<select name="specialisation">';
+                echo '<select name="animation_and_game_design">';
 
                 echo '<option value="">All</option>';
 

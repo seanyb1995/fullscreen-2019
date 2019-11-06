@@ -30,8 +30,10 @@ get_header();
           
           <div class="section-1-sun" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/sun-assetv2.svg');">
             
-            <div class="section-1-mountains" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/mountain.svg');">
+            <div class="section-1-mountains section-1-mountains-back" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/mountain.svg');"></div>
             
+            <div class="section-1-mountains section-1-mountains-front" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/mountain.svg');">
+              <div class="section-1-blue-line"></div>
             </div>
             
           </div>

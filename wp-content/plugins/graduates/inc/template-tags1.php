@@ -13,7 +13,6 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     // if any filters are set 
   
     $digital_design = $_POST['digital_design'];
-    $major = $_POST['major'];
     $animation_and_game_design = $_POST['animation_and_game_design'];
   
     // setup the parameters for the query
@@ -34,32 +33,15 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
       'meta_value'	=> $digital_design
     );
       
-    }elseif( $animation_and_game_design !=""){
-     
+    }else{
+        
+    // else, just query all posts as normal (no filtering)
     $args = array(
       'post_type'		=> 'graduates',
       'meta_key'		=> 'specialisation',
-      'meta_value'	=> $animation_and_game_design
-    );    
-      
-    }else{
-      $args = array(
-          'post_type' => 'graduates',
-          'orderby' => 'menu_order',
-          'order' => 'ASC',
-          'tax_query' => array(
-            array(
-              'taxonomy' => 'major',
-              'field' => 'slug',
-              'terms' => $major
-            )
-          )
-        );
+      'meta_value'	=> array('Full-stack Web Development' , 'User Experience Design', 'Web and Digital Branding', 'App / Interface Design', 'Front-end Web Development', 'Back-end Web Development')
+    );
     }
-      
-    
-      
-   
     
   
   $graduates = new WP_Query($args);
@@ -90,4 +72,4 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
   <?php endif ?>
   <?php
   }
- 
+
