@@ -151,7 +151,7 @@ function create_bootstrap_menu( $theme_location ) {
       if( $theme_location == 'primary' ) {
         
         $menu_list  = '<nav class="navbar navbar-dark navbar-expand-lg fullscreen-site-navigation">' ."\n";
-        $menu_list .= '<div class="container-fluid">' ."\n";
+        $menu_list .= '<div class="container">' ."\n";
       
           $menu_list .= '<a class="navbar-brand fullscreen-custom-logo-constraints" href="' . home_url() . '" rel="home">' . wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' ) . '</a>';
           $menu_list .= '<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">' ."\n";
@@ -203,6 +203,31 @@ function create_bootstrap_menu( $theme_location ) {
       }
       echo $menu_list;
 }
+
+/**
+ * Test for mobile
+ */
+
+require_once get_template_directory() . '/libs/Mobile_Detect.php';
+
+function device_body_class ( $classes ) 
+{
+   $detect = new Mobile_Detect;
+   $mobile = $detect->isMobile();
+   $tablet = $detect->isTablet();
+   if ( $mobile ) {
+        $classes[] = 'fullscreen_mobile';
+        if ( $tablet ) {
+            $classes[] = 'fullscreen_tablet';
+        } else {
+            $classes[] = 'fullscreen_phone';
+        }
+    } else {
+        $classes[] = 'fullscreen_desktop';
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'device_body_class' );
 
 /**
  * Implement the Custom Header feature.

@@ -5,8 +5,8 @@
  * to output some HTML for each product with a heading and link.
  * A dropdown appears allowing the front-end user to filter by the category taxonomy
 */
-add_action('wp_ajax_myfilter', 'digital_design_gradautes_filter_function'); // wp_ajax_{ACTION HERE}
-add_action('wp_ajax_nopriv_myfilter', 'digital_design_graduates_filter_function');
+add_action('wp_ajax_ddfilter', 'digital_design_gradautes_filter_function'); // wp_ajax_{ACTION HERE}
+add_action('wp_ajax_nopriv_ddfilter', 'digital_design_graduates_filter_function');
 
   function digital_design_gradautes_filter_function() {
       
@@ -16,17 +16,19 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_graduates_filter_function'
   
     // setup the parameters for the query
     $tax_query = "";
+    
     /*
         if category is not empty, then filter must be active
         set var $tax_query to be used in out final WP query
         for the product post
     */
        
+   // Check if filter is set if so query database by specialisation from POST
     
     if( $specialisation !=""){
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'digital_design_specialisation',
+      'meta_key'		=> 'specialisation',
       'meta_value'	=> $specialisation
     );
       
@@ -35,8 +37,8 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_graduates_filter_function'
     // else, just query all posts as normal (no filtering)
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'digital_design_specialisation',
-      'meta_value'	=> array('Front End Development', 'Full-Stack Developer')
+      'meta_key'		=> 'specialisation',
+      'meta_value'	=> array('Full-stack Web Development' , 'User Experience Design', 'Web and Digital Branding', 'App / Interface Design', 'Front-end Web Development', 'Back-end Web Development')
     );
     }
     
@@ -59,7 +61,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_graduates_filter_function'
         <p>
           <?php 
                    
-            $specialisation = get_field_object('digital_design_specialisation'); 
+            $specialisation = get_field_object('specialisation'); 
             echo $specialisation['value'];
     
           ?>

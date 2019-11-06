@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Digital Design
+ * Template Name: Animation and Game Design
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -17,7 +17,7 @@ get_header();
         
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
           <?php
-            $field_key = "field_5dc24f68cd814"; 
+            $field_key = "field_5dc24fce90f0e"; 
               $field = get_field_object($field_key);
 
               if( $field ) {

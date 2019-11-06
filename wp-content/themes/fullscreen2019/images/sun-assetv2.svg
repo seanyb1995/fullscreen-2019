@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st1{fill:url(#SVGID_2_);stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st2{fill:url(#SVGID_3_);stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st3{fill:url(#SVGID_4_);stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st4{fill:url(#SVGID_5_);stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="868.1381" y1="70.3753" x2="839.6629" y2="941.715">
+		<stop  offset="0" style="stop-color:#FFF800"/>
+		<stop  offset="1" style="stop-color:#F7931E"/>
+	</linearGradient>
+	<polygon class="st0" points="1292.5,434.5 1292.5,571.5 415.5,571.5 415.5,434.5 434.5,434.5 434.5,376.5 453.5,376.5 453.5,317.5 
+		473.5,317.5 473.5,278.5 492.5,278.5 492.5,259.5 512.5,259.5 512.5,220.5 531.5,220.5 531.5,200.5 551.5,200.5 551.5,181.5 
+		570.5,181.5 570.5,161.5 609.5,161.5 609.5,142.5 629.5,142.5 629.5,122.5 668.5,122.5 668.5,103.5 707.5,103.5 707.5,83.5 
+		785.5,83.5 785.5,64.5 922.5,64.5 922.5,83.5 1000.5,83.5 1000.5,103.5 1039.5,103.5 1039.5,122.5 1078.5,122.5 1078.5,142.5 
+		1097.5,142.5 1097.5,161.5 1136.8,161.7 1136.5,181.5 1156.5,181.5 1156.5,200.5 1175.5,200.5 1175.5,220.5 1195.3,220.5 
+		1195.3,259.5 1214.5,259.5 1214.5,278.5 1234.5,278.5 1234.5,317.5 1253.5,317.5 1253.5,376.5 1273.5,376.5 1273.5,434.5 	"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="866.411" y1="230.2226" x2="841.411" y2="995.2226">
+		<stop  offset="0" style="stop-color:#FFF800"/>
+		<stop  offset="1" style="stop-color:#F7931E"/>
+	</linearGradient>
+	<polygon class="st1" points="1273.5,590.5 1273.5,629.5 1253.5,629.5 1253.5,649.5 453.5,649.5 453.5,629.5 434.5,629.5 
+		434.5,590.5 	"/>
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="868.1477" y1="230.2793" x2="843.1477" y2="995.2794">
+		<stop  offset="0" style="stop-color:#FFF800"/>
+		<stop  offset="1" style="stop-color:#F7931E"/>
+	</linearGradient>
+	<polygon class="st2" points="1253.5,668.5 1253.5,688.5 1234.5,688.5 1234.5,727.5 473.5,727.5 473.5,688.5 453.5,688.5 
+		453.5,668.5 	"/>
+	<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="871.8627" y1="230.4007" x2="846.8627" y2="995.4008">
+		<stop  offset="0" style="stop-color:#FFF800"/>
+		<stop  offset="1" style="stop-color:#F7931E"/>
+	</linearGradient>
+	<polygon class="st3" points="1195.5,767.5 1195.5,786.5 1175.5,786.5 1175.5,806.5 1156.5,806.5 1156.5,826.5 551.5,826.5 
+		551.5,806.5 531.5,806.5 531.5,786.5 512.5,786.5 512.5,767.5 	"/>
+	<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="874.0303" y1="230.4716" x2="849.0303" y2="995.4716">
+		<stop  offset="0" style="stop-color:#FFF800"/>
+		<stop  offset="1" style="stop-color:#F7931E"/>
+	</linearGradient>
+	<polygon class="st4" points="1077.5,864.5 1077.5,883.5 1038.5,883.5 1038.5,903.5 979.5,903.5 979.5,922.5 921.5,922.5 
+		921.5,942.5 784.5,942.5 784.5,922.5 726.5,922.5 726.5,903.5 667.5,903.5 667.5,883.5 628.5,883.5 628.5,864.5 	"/>
+	<rect x="415.5" y="571.5" class="st5" width="877" height="19"/>
+	<rect x="453.5" y="649.5" class="st5" width="800" height="19"/>
+	<rect x="512.5" y="727.5" class="st5" width="683" height="40"/>
+	<rect x="629" y="826.5" class="st5" width="448" height="38"/>
+</g>
+</svg>

@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Digital Design
+ * Template Name: Creative Advertising
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -17,7 +17,7 @@ get_header();
         
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
           <?php
-            $field_key = "field_5dc24f68cd814"; 
+            $field_key = "field_5dc250bee7c25"; 
               $field = get_field_object($field_key);
 
               if( $field ) {
@@ -37,7 +37,7 @@ get_header();
                 echo '</select>';
               }
           ?>
-          <input type="hidden" name="action" value="myfilter">
+          <input type="hidden" name="action" value="ddfilter">
         </form>
         
         <div id="graduates"></div>
