@@ -37,6 +37,7 @@ get_header();
                 echo '</select>';
               }
           ?>
+          <input type="hidden" name="major" value="Illustration">
           <input type="hidden" name="action" value="myfilter">
         </form>
         

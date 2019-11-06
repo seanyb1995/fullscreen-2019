@@ -13,8 +13,13 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     // if any filters are set 
   
     $digital_design = $_POST['digital_design'];
-    $major = $_POST['major'];
     $animation_and_game_design = $_POST['animation_and_game_design'];
+    $graphic_design = $_POST['graphic_design'];
+    $illustration = $_Post['Illustration'];
+    $creative_advertising = $_POST['creative_advertising'];
+    $major = $_POST['major'];
+    $search = $_POST['search'];
+    $search = strval($search);
   
     // setup the parameters for the query
     $tax_query = "";
@@ -27,6 +32,8 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
        
    // Check if filter is set if so query database by specialisation from POST
     
+    
+    // Check digital design page for form submission
     if( $digital_design !=""){
     $args = array(
       'post_type'		=> 'graduates',
@@ -34,6 +41,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
       'meta_value'	=> $digital_design
     );
       
+    // Check animation and game design page for form submission
     }elseif( $animation_and_game_design !=""){
      
     $args = array(
@@ -42,7 +50,47 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
       'meta_value'	=> $animation_and_game_design
     );    
       
+    // Check graphic design page for form submission  
+    }elseif( $graphic_design !=""){
+     
+    $args = array(
+      'post_type'		=> 'graduates',
+      'meta_key'		=> 'specialisation',
+      'meta_value'	=> $graphic_design
+    );    
+      
+    // Check illustration page for form submission  
+    }elseif( $illustration !=""){
+     
+    $args = array(
+      'post_type'		=> 'graduates',
+      'meta_key'		=> 'specialisation',
+      'meta_value'	=> $illustration
+    );  
+      
+    // Check creative advertising page for form submission    
+    }elseif( $creative_advertising !=""){
+     
+    $args = array(
+      'post_type'		=> 'graduates',
+      'meta_key'		=> 'specialisation',
+      'meta_value'	=> $creative_advertising
+    );   
+      
+    }elseif( $search !=""){
+     
+    print_r($search);
+    $args = array(
+        'post_type' => 'graduates',
+        'post_title' => 'Sean Buchanan',
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+    );   
+      
+//       SELECT * FROM `wp_posts` WHERE `post_type` = 'graduates' AND `post_title` = 'Sean Buchanan' order by 'menu_order' asc 
+ 
     }else{
+      // If no select is made show graduates specific to major
       $args = array(
           'post_type' => 'graduates',
           'orderby' => 'menu_order',

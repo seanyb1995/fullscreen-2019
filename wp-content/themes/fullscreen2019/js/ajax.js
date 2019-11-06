@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   
-//----------------------------------------------------------------graduate posts--//    
+//----------------------------------------------------------------graduate select--//    
   
 	$('#filter').change(function(){
 		var filter = $('#filter');
@@ -15,7 +15,23 @@ jQuery(document).ready(function($) {
 		return false;
 	});
   
-  //----------------------------------------------------------------graduate posts--//    
+  //----------------------------------------------------------------graduate search--//    
+  
+	$('#filter').submit(function(){
+		var filter = $('#filter');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(), // form data
+			type:filter.attr('method'), // POST
+			success:function(data){
+				$('#graduates').html(data); // insert data
+			}
+		});
+		return false;
+	});
+  
+  
+  //----------------------------------------------------------------graduate page load--//    
   
   var filter = $('#filter');
     $.ajax({

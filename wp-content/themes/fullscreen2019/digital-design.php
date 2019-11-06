@@ -37,8 +37,12 @@ get_header();
                 echo '</select>';
               }
           ?>
-          <input type="hidden" name="action" value="digital_design">
+          
+          <input type="hidden" name="major" value="digital_design">
           <input type="hidden" name="action" value="myfilter">
+          
+          <input type="text" name="search" placeholder="search">
+          <input type="submit" id="submit" value="submit">
         </form>
         
         <div id="graduates"></div>
