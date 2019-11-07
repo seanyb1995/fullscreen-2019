@@ -33,8 +33,6 @@ get_header();
             </div>
             
           </div>
-          
-<!--           <img src="<?php //echo get_template_directory_uri() ?>/images/mountain.svg" alt="Mountains"/> -->
 
         </div>
 

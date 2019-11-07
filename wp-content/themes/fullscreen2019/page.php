@@ -17,20 +17,42 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+      
+      <section class="page-section-1">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+        <div class="page-section-1-stars">
+          
+          <div class="page-section-1-sun" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/sun-assetv2.svg');">
+            
+            <div class="page-section-1-mountains section-1-mountains-back" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/mountain.svg');"></div>
+            
+            <div class="page-section-1-mountains section-1-mountains-front" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/mountain.svg');">
+              <div class="page-section-1-blue-line"></div>
+            </div>
+            
+          </div>
 
-			get_template_part( 'template-parts/content', 'page' );
+        </div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+      </section>
+      
+      <section class="main-content">
+        
+        <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
+          
+          <div class="section-2">
+            
+            <section class="section section-page-header">
+              <div class="section-page-header-title">
+                <h3><?php single_post_title(); ?></h3>
+              </div>
+            </section>
+            
+          </div>
+          
+        </div>
+      
+      </section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

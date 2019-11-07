@@ -77,13 +77,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
       'meta_value'	=> $creative_advertising
     );   
       
-    }elseif( $search !=""){
-
-//     $args = array(
-//       'post_type'		=> 'graduates',
-//       'meta_key'		=> 'name',
-//       'meta_value'	=> $search
-//     );    
+    }elseif( $search !=""){ 
       
     $args = array(
         'post_type' => 'graduates',
@@ -98,7 +92,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
             array(
                 'key' => 'name',
                 'value' => $search,
-                'compare' => '='
+                'compare' => 'LIKE'
             )
         )
     );
