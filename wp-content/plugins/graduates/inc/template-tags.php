@@ -93,7 +93,14 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
                 'key' => 'name',
                 'value' => $search,
                 'compare' => 'LIKE'
+            ),
+          
+            array(
+                'key' => 'project_1_name',
+                'value' => $search,
+                'compare' => 'LIKE'
             )
+          
         )
     );
  
