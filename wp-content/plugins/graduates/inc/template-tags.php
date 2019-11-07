@@ -78,14 +78,30 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     );   
       
     }elseif( $search !=""){
-  
-      $args = array(
-          'post_type' => 'graduates',
-          'name' => $search,
-          'orderby' => 'menu_order',
-          'order' => 'ASC'
-        );   
+
+//     $args = array(
+//       'post_type'		=> 'graduates',
+//       'meta_key'		=> 'name',
+//       'meta_value'	=> $search
+//     );    
       
+    $args = array(
+        'post_type' => 'graduates',
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'specialisation',
+                'value' => $major,
+                'compare' => '='
+            ),
+
+            array(
+                'key' => 'name',
+                'value' => $search,
+                'compare' => '='
+            )
+        )
+    );
  
     }else{
       // If no select is made show graduates specific to major

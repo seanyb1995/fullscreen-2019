@@ -20,11 +20,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
       
-      <?php if (in_array('fullscreen_mobile', $classes)) { 
-      ?><section class="section-1 section-1-isMobile"><?php
-      } else {
-      ?><section class="section-1"><?php
-      }?>
+      <section class="section-1">
 
         <div class="section-1-stars">
           
@@ -44,7 +40,19 @@ get_header();
 
       </section>
       
-      <section class="">
+      <section class="main-content">
+        
+        <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
+          
+          <div class="section-2">
+            
+            <div class="section-2-road" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/path_new.svg');">
+            
+            </div>
+            
+          </div>
+          
+        </div>
       
       </section>
 

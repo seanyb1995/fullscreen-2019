@@ -88,6 +88,18 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     );   
       
 //       SELECT * FROM `wp_posts` WHERE `post_type` = 'graduates' AND `post_title` = 'Sean Buchanan' order by 'menu_order' asc 
+      
+         SELECT * FROM `wp_posts` WHERE `post_type` = 'graduates' INNER JOIN SELECT * FROM `wp_terms` WHERE `slug` = 'digital_design'
+           
+      
+//         // MySQL database entry
+//         $query = "SELECT movies.*, genres.genre ";
+//         $query .= "FROM movies ";
+//         $query .= "INNER JOIN genres ON movies.genre = genres.genre_id ";
+//         $query .= "WHERE movie_id = $_GET[id] ";
+//         $query .= "LIMIT 1";
+//         $result = mysqli_query($connection, $query);
+//         // Test if there was a query error
  
     }else{
       // If no select is made show graduates specific to major
