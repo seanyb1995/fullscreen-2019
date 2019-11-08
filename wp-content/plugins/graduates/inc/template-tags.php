@@ -24,16 +24,36 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     
     $favourite = $_POST['favourite'];
     
+    
+    
+    // if session variable favourite isn't set, make it an empty array
     if  ( ! isset($_SESSION['favourite'])) {
       $_SESSION['favourite'] = array();
-    }
+    } 
     
-    $_SESSION['single_graduate'] = array();
+    // set session graduate as an empty array
+    $_SESSION['graduate'] = array();
     
-    if(isset($favourite)){
-      array_push($_SESSION['single_graduate'], $favourite);
-      array_push($_SESSION['favourite'], $_SESSION['single_graduate']);
-      print_r($_SESSION['favourite']);
+    if(isset($favourite)) {
+      
+      $_SESSION['graduate'] = array(
+        'name' => $favourite
+      );
+      
+      $graduate = $_SESSION['graduate'];
+      
+      if(in_array($graduate,$_SESSION['favourite'])){
+        print_r("in");
+        $key=array_search($graduate,$_SESSION['favourite']);
+        if($key!==false)
+        unset($_SESSION['favourite'][$key]);
+        $_SESSION["favourite"] = array_values($_SESSION["favourite"]);
+      }else{
+        print_r("out");
+        array_push($_SESSION['favourite'], $graduate);
+      }
+      
+      
     }
     
     // setup the parameters for the query

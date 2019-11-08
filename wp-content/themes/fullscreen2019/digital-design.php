@@ -18,7 +18,22 @@ get_header();
       <!--testing environment-->
       <section class="test-environment">
         <h1>Some dank favourites</h1>
-        <p><?php if(isset($_SESSION["favourite"])) { echo $_SESSION["favourite"]; } ?></p>
+        <div class="favourite">
+        <?php 
+          if(isset($_SESSION["favourite"])) { 
+            
+            $favourites = $_SESSION['favourite']; 
+            print_r($favourites);
+            
+//             $favourites = array_unique($favourites, SORT_REGULAR);
+            
+            foreach($favourites as $favourite){
+              ?><p><?php echo $favourite['name']; ?></p><?php
+            }          
+            
+          } 
+          ?>
+          </div>
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
           <?php
             $field_key = "field_5dc24f68cd814"; 
