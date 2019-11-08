@@ -9,6 +9,11 @@
  * @package Fullscreen2019
  */
 
+// transfer session across pages
+session_start();
+// session_unset();
+// session_destroy();
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

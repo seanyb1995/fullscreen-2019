@@ -5,11 +5,13 @@
  * to output some HTML for each product with a heading and link.
  * A dropdown appears allowing the front-end user to filter by the category taxonomy
 */
+
 add_action('wp_ajax_myfilter', 'digital_design_filter_function'); // wp_ajax_{ACTION HERE}
 add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
 
   function digital_design_filter_function() {
-      
+    session_start();
+//     session_destroy();
     // if any filters are set 
   
     $digital_design = $_POST['digital_design'];
@@ -19,8 +21,21 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     $creative_advertising = $_POST['creative_advertising'];
     $major = $_POST['major'];
     $search = $_POST['search'];
-    $search = strval($search);
-  
+    
+    $favourite = $_POST['favourite'];
+    
+    if  ( ! isset($_SESSION['favourite'])) {
+      $_SESSION['favourite'] = array();
+    }
+    
+    $_SESSION['single_graduate'] = array();
+    
+    if(isset($favourite)){
+      array_push($_SESSION['single_graduate'], $favourite);
+      array_push($_SESSION['favourite'], $_SESSION['single_graduate']);
+      print_r($_SESSION['favourite']);
+    }
+    
     // setup the parameters for the query
     $tax_query = "";
     
@@ -99,6 +114,18 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
                 'key' => 'project_1_name',
                 'value' => $search,
                 'compare' => 'LIKE'
+            ),
+          
+            array(
+                'key' => 'project_2_name',
+                'value' => $search,
+                'compare' => 'LIKE'
+            ),
+          
+            array(
+                'key' => 'project_3_name',
+                'value' => $search,
+                'compare' => 'LIKE'
             )
           
         )
@@ -125,6 +152,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
   if( $graduates->have_posts() ): ?>
     <?php while($graduates->have_posts()): $graduates->the_post(); ?>
       <div class="graduate">
+        <input type="checkbox" name="checkbox" id="checkbox" value="<?php the_title(); ?>"/>
         <h1><?php the_title(); ?></h1>
           <?php   // Get terms for post
            $terms = get_the_terms( $post->ID , 'major' );
@@ -149,4 +177,5 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
   <?php endif ?>
   <?php
   }
+
  
