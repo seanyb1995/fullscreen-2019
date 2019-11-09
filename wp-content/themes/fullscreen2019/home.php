@@ -44,7 +44,8 @@ get_header();
         <!--star bottom svg-->
         <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
           
-          <div class="section-2">
+          <!--bottom path svg-->
+          <div class="section-2" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/bottom-path.svg');">
             
             <!--path svg-->
             <div class="section-2-road" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/path_new.svg');">
@@ -71,8 +72,11 @@ get_header();
                 
                 <!--about content-->
                 <div class="about-content">
+                  
                   <h3><?php echo get_field('heading_1'); ?></h3>
+                  
                   <p><?php echo get_field('paragraph_1'); ?></p>
+                  
                 </div>
 
                 <!--bottom left pixal-->
@@ -108,9 +112,150 @@ get_header();
                 <div class="top-right"></div>
                 
                 <!--about content-->
-                <div class="about-content">
+                <div class="graduate-content">
+                  
                   <h3><?php echo get_field('heading_2'); ?></h3>
-                  <p><?php echo get_field('paragraph_2'); ?></p>
+                  
+                  <!--digital design-->
+                  <div class="major"> 
+                    
+                    <!--top left pixal-->
+                    <div class="top-left"></div>
+
+                    <!--top border-->
+                    <div class="top"></div>
+
+                    <!--top right pixal-->
+                    <div class="top-right"></div>
+                    
+                    <!--major icon-->
+                    <div class="major-icon">
+                      
+                    </div>
+                    
+                     <!--bottom left pixal-->
+                    <div class="bottom-left"></div>
+
+                    <!--bottom border-->
+                    <div class="bottom"></div>
+
+                    <!--bottom right pixal-->
+                    <div class="bottom-right"></div>
+                    
+                  </div>
+                  
+                  <!--games and animation design-->
+                  <div class="major"> 
+                    
+                    <!--top left pixal-->
+                    <div class="top-left"></div>
+
+                    <!--top border-->
+                    <div class="top"></div>
+
+                    <!--top right pixal-->
+                    <div class="top-right"></div>
+                    
+                    <!--major icon-->
+                    <div class="major-icon">
+                      
+                    </div>
+                    
+                     <!--bottom left pixal-->
+                    <div class="bottom-left"></div>
+
+                    <!--bottom border-->
+                    <div class="bottom"></div>
+
+                    <!--bottom right pixal-->
+                    <div class="bottom-right"></div>
+                    
+                  </div>
+                  
+                  <!--graphic design design-->
+                  <div class="major"> 
+                    
+                    <!--top left pixal-->
+                    <div class="top-left"></div>
+
+                    <!--top border-->
+                    <div class="top"></div>
+
+                    <!--top right pixal-->
+                    <div class="top-right"></div>
+                    
+                    <!--major icon-->
+                    <div class="major-icon">
+                      
+                    </div>
+                    
+                     <!--bottom left pixal-->
+                    <div class="bottom-left"></div>
+
+                    <!--bottom border-->
+                    <div class="bottom"></div>
+
+                    <!--bottom right pixal-->
+                    <div class="bottom-right"></div>
+                    
+                  </div>
+                  
+                  <!--creative advertising design-->
+                  <div class="major"> 
+                    
+                    <!--top left pixal-->
+                    <div class="top-left"></div>
+
+                    <!--top border-->
+                    <div class="top"></div>
+
+                    <!--top right pixal-->
+                    <div class="top-right"></div>
+                    
+                    <!--major icon-->
+                    <div class="major-icon">
+                      
+                    </div>
+                    
+                     <!--bottom left pixal-->
+                    <div class="bottom-left"></div>
+
+                    <!--bottom border-->
+                    <div class="bottom"></div>
+
+                    <!--bottom right pixal-->
+                    <div class="bottom-right"></div>
+                    
+                  </div>
+                  
+                  <!--illustration design-->
+                  <div class="major"> 
+                    
+                    <!--top left pixal-->
+                    <div class="top-left"></div>
+
+                    <!--top border-->
+                    <div class="top"></div>
+
+                    <!--top right pixal-->
+                    <div class="top-right"></div>
+                    
+                    <!--major icon-->
+                    <div class="major-icon">
+                      
+                    </div>
+                    
+                     <!--bottom left pixal-->
+                    <div class="bottom-left"></div>
+
+                    <!--bottom border-->
+                    <div class="bottom"></div>
+
+                    <!--bottom right pixal-->
+                    <div class="bottom-right"></div>
+                    
+                  </div>
+                  
                 </div>
 
                 <!--bottom left pixal-->
@@ -147,8 +292,11 @@ get_header();
                 
                 <!--about content-->
                 <div class="about-content">
+                  
                   <h3><?php echo get_field('heading_3'); ?></h3>
+                  
                   <p><?php echo get_field('paragraph_3'); ?></p>
+                  
                 </div>
 
                 <!--bottom left pixal-->
@@ -185,8 +333,11 @@ get_header();
                 
                 <!--about content-->
                 <div class="about-content">
+                  
                   <h3><?php echo get_field('heading_4'); ?></h3>
+                  
                   <?php contactform_box(); ?>
+                  
                 </div>
 
                 <!--bottom left pixal-->

@@ -50,7 +50,7 @@ get_header();
         <!--star bottom svg-->
         <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
           
-          <div class="section-2">
+          <div class="section-2" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/bottom-path.svg');">
             
             <!--path svg-->
             <div class="section-2-road" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/path_new.svg');">

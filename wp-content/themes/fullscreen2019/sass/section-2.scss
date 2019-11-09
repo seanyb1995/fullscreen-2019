@@ -4,6 +4,9 @@
   position:relative;
   height:100%;
   height:259px;
+  background-position: center top;
+  background-size: 3000px 259px;
+  background-repeat: no-repeat;
   
   &-stars {
     
@@ -30,6 +33,7 @@
     background-repeat: repeat-x;
     margin-top: -141px;
     padding-bottom: 141px;
+    z-index: 20;
   }
   
   &-isMobile {
