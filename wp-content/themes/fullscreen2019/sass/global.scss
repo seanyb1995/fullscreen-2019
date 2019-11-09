@@ -1,3 +1,12 @@
+/*-------------------------------------------------------------
+Global
+--------------------------------------------------------------*/
+
+// Font
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Press Start 2P", cursive !important;
+}
+
 .call-to-action-button {
   position: relative;
   background:$secondary-color;
@@ -55,5 +64,13 @@
         100% {transform:translateX(0px);}
       }
     }
+  }
+}
+
+.fullscreen-custom-logo-constraints {
+
+  img {
+    max-width:200px;
+    max-height:60px;
   }
 }

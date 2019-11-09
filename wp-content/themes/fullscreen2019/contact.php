@@ -1,21 +1,19 @@
-<?php
+<?php 
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Template Name: Contact
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Fullscreen2019
+ * @package Activated_Almond_Digital
  */
 
+// transfer session to digital design page
+
 get_header();
+
 ?>
 
-	<div id="primary" class="content-area">
+  <div id="primary" class="content-area">
 		<main id="main" class="site-main">
       
       <section class="page-section-1">
@@ -40,7 +38,7 @@ get_header();
         
         <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
           
-          <div class="section-2">
+          <div class="section-2 page-section-2">
             
           </div>
           
@@ -48,7 +46,7 @@ get_header();
             <div class="container">
               <div class="row">
                 <div class="col">
-                  
+                  <?php contactform_box(); ?>
                 </div>
               </div>
             </div>

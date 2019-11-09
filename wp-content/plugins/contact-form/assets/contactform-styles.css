@@ -1,0 +1,91 @@
+.content {
+  .contact {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    input, placeholder, button {
+      font-family: 'DM Serif Display', serif;
+    }
+    input {
+      width: 25vw;
+      padding: 12px 24px;
+    }
+    placeholder {
+      font-size: 16px;
+    }
+    button {
+      border: none;
+      background: $orange;
+      color: white;
+      padding: 12px 24px;
+      margin-left: 0.5em;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    input, button {
+      float: left;
+    }
+  }
+}
+
+.lets-talk {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 2;
+  z-index: 1;
+  form {
+    p,input {
+      display: inline-block;
+    }
+    input {
+      border: none;
+      border-bottom: 2px solid $orange;
+      width: 150px;
+      height: 38px;
+      margin: 4px 10px 0px;
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+    .help {
+      input {
+        width: 300px;
+      }
+    }
+    button {
+      text-decoration: none;
+      color: black;
+      position: relative;
+      transition: all 0.3s ease;
+      font-size: 28px;
+      cursor: pointer;
+      margin-left: 1em;
+    }
+    button:before {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      right: -25px;
+      top: -5px;
+      content: '';
+      background: $orange;
+      transition: all 0.3s;
+      z-index: -1;
+    }
+    button:hover:before {
+      width: 165%;
+    }
+    button:hover {
+      color: white;
+    }
+  }
+  .links {
+    p {
+      padding-top: 3em;
+    }
+  }
+}
+

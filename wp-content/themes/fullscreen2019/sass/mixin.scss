@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -ms-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+@mixin box-shadow($box-shadow) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    -ms-box-shadow: $box-shadow;
+    -o-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+@mixin text-shadow($text-shadow) {
+    -webkit-text-shadow: $text-shadow;
+    -moz-text-shadow: $text-shadow;
+    -ms-text-shadow: $text-shadow;
+    -o-text-shadow: $text-shadow;
+    text-shadow: $text-shadow;
+}
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+@mixin step2v2( $width, $color, $bgcolor ) {
+  box-shadow:
+    $width 0 $bgcolor,
+    -$width 0 $bgcolor,
+    0 (-$width) $bgcolor,
+    0 $width $bgcolor,
+    2*$width 0 $color,
+    -2*$width 0 $color,
+    0 (-2*$width) $color,
+    0 2*$width $color, 
+    0 0 0 $width $color;
+  margin: 2*$width auto;
+}

@@ -124,6 +124,8 @@ function fullscreen2019_scripts() {
   
   wp_enqueue_style( 'fullscreen2019-style', get_template_directory_uri() . '/css/stylesheet.min.css' );
   
+  wp_enqueue_style( 'fullscreen2019-fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' ); //FONTAWESOME STYLESHEET
+  
   wp_enqueue_style( 'bootstrap4', get_template_directory_uri() . '/css/Bootstrap/bootstrap.min.css' ); //BOOTSTRAP
   
   wp_enqueue_script('jquery', false, array(), false, false);
@@ -201,6 +203,98 @@ function create_bootstrap_menu( $theme_location ) {
       } else {
           $menu_list = '<!-- no menu (2) defined in location "'.$theme_location.'" -->';
       }
+      echo $menu_list;
+}
+
+/**
+ * Footer Nav Items MAIN
+ */
+function get_footer_menu_items_main( $theme_location ) {
+    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+         
+      if( $theme_location == 'primary' ) {
+        
+
+          $menu = get_term( $locations[$theme_location], 'nav_menu' );
+          $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+          foreach( $menu_items as $menu_item ) {
+          
+            if( $menu_item->menu_item_parent == 0 ) {
+
+                  $parent = $menu_item->ID;
+                
+                  $bool = false;
+
+                  $menu_array = array();
+                  foreach( $menu_items as $submenu ) {
+                      if( $submenu->menu_item_parent == $parent ) {
+                          $bool = true;
+                          $menu_array[] = '<a class="fullscreen-footer-link-underline" href="' . $submenu->url . '">' . $submenu->title . '</a>' ."\n";
+                      }
+                  }
+                  if( $bool == true && count( $menu_array ) > 0 ) {                     
+
+                      //$menu_list .= implode( "\n", $menu_array );
+
+                  } else {
+                      $menu_list .= '<a href="' . $menu_item->url . '" class="fullscreen-footer-link-underline">' . $menu_item->title . '</a>' ."\n";
+                  }
+
+              }
+          }
+
+        } else {
+            $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+        }
+      
+      } else {
+          $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+      }
+
+      echo $menu_list;
+}
+  
+  /**
+ * Footer Nav Items SUB
+ */
+function get_footer_menu_items_sub( $theme_location ) {
+    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+         
+      if( $theme_location == 'primary' ) {
+        
+
+          $menu = get_term( $locations[$theme_location], 'nav_menu' );
+          $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+          foreach( $menu_items as $menu_item ) {
+              if( $menu_item->menu_item_parent == 0 ) {
+                  $parent = $menu_item->ID;
+                
+                  $bool = false;
+                  $menu_array = array();
+                  foreach( $menu_items as $submenu ) {
+                      if( $submenu->menu_item_parent == $parent ) {
+                          $bool = true;
+                          $menu_array[] = '<a class="fullscreen-footer-link-underline" href="' . $submenu->url . '">' . $submenu->title . '</a>' ."\n";
+                      }
+                  }
+                  if( $bool == true && count( $menu_array ) > 0 ) {
+                      $menu_list .= implode( "\n", $menu_array );
+                  } else {
+                      //$menu_list .= '<a href="' . $menu_item->url . '" class="nav-link text-white">' . $menu_item->title . '</a>' ."\n";
+                  }
+              }
+          }
+
+        } else {
+            $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+        }
+      
+      } else {
+          $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+      }
+
       echo $menu_list;
 }
 

@@ -1,0 +1,40 @@
+.fullscreen-footer {
+  font-family: 'Press Start 2P', cursive;
+  background:black;
+  padding-top:100px;
+//   padding-bottom:40px;
+  background-position: center top;
+  background-size: 1920px 524px;
+  background-repeat: repeat;
+  
+  p,a {
+    color:white;
+  }
+  
+  .fa {
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 32px;
+  }
+  
+  .fullscreen-footer-link-underline {
+    position:relative;
+    display:block;
+    margin-bottom:4px;
+
+    &:hover {
+      text-decoration:none;
+      transform:translateY(-1px);
+      transition:transform .1s ease-in-out;
+    }
+  }
+  
+  .curtin-logo {
+    width:100%;
+    max-width:255px;
+  }
+  
+  .bottom-pixels {
+    margin-bottom:40px;
+  }
+}
