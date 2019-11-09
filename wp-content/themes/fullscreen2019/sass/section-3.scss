@@ -17,6 +17,21 @@ $reset-button-background: #E76E55;
 $reset-sec-button-background: #CE372B;
 $reset-shadow-color:  #8C2022;
 
+.section-3-moon {
+  position:absolute;
+  width:200px;
+  right:40px;
+  bottom:-60px;
+  -webkit-animation: float-animation 3s infinite; /* Safari 4.0 - 8.0 */
+  animation: float-animation 3s infinite;
+
+  @keyframes float-animation {
+    0%   {transform:translateY(0%);}
+    50%  {transform:translateY(5%);}
+    100% {transform:translateY(0%);}
+  }
+}
+
 .section-3-about {
   min-height: 700px;
   max-height: 800px;
@@ -25,6 +40,7 @@ $reset-shadow-color:  #8C2022;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position:relative;
   
   .section-3 {
   
@@ -71,6 +87,10 @@ $reset-shadow-color:  #8C2022;
         flex-direction: column;
         height: 100%;
         padding: 60px;
+        
+        h1 {
+          color: white;
+        }
         
         h3 {
           color: white;
@@ -273,6 +293,23 @@ $reset-shadow-color:  #8C2022;
     .major-icon {
       width: 100%;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+      img {
+        width: 75%;
+        height: 75%;
+      }
+       
+    }
+    
+    h4 {
+      color: white;
+      font-size: 1rem;
+      margin-top: 3rem;
+      text-align: center;
     }
 
     .bottom-left {

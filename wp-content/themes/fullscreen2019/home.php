@@ -97,6 +97,10 @@ get_header();
           
           <!--graduates section-->
           <div class="section-3-about">
+            
+            <div class="section-3-moon">
+              <img src="<?php echo get_template_directory_uri() ?>/images/Moon.svg" alt="Moon"/>
+            </div>
 
             <div class="container section-3">
 
@@ -131,7 +135,16 @@ get_header();
                     <!--major icon-->
                     <div class="major-icon">
                       
+                      <?php 
+                      $image = get_field('image_1');
+                      if( !empty( $image ) ): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                      <?php endif; ?>
+                      
                     </div>
+                    
+                    <!--major title-->
+                    <h4>Digital Design</h4>
                     
                      <!--bottom left pixal-->
                     <div class="bottom-left"></div>
@@ -159,7 +172,16 @@ get_header();
                     <!--major icon-->
                     <div class="major-icon">
                       
+                       <?php 
+                      $image = get_field('image_2');
+                      if( !empty( $image ) ): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                      <?php endif; ?>
+                      
                     </div>
+                    
+                    <!--major title-->
+                    <h4>Games and Animation</h4>
                     
                      <!--bottom left pixal-->
                     <div class="bottom-left"></div>
@@ -187,7 +209,16 @@ get_header();
                     <!--major icon-->
                     <div class="major-icon">
                       
+                      <?php 
+                      $image = get_field('image_3');
+                      if( !empty( $image ) ): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                      <?php endif; ?>
+                      
                     </div>
+                    
+                    <!--major title-->
+                    <h4>Graphic Design</h4>
                     
                      <!--bottom left pixal-->
                     <div class="bottom-left"></div>
@@ -215,7 +246,16 @@ get_header();
                     <!--major icon-->
                     <div class="major-icon">
                       
+                      <?php 
+                      $image = get_field('image_4');
+                      if( !empty( $image ) ): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                      <?php endif; ?>
+                      
                     </div>
+                    
+                    <!--major title-->
+                    <h4>Creative Advertising</h4>
                     
                      <!--bottom left pixal-->
                     <div class="bottom-left"></div>
@@ -243,7 +283,16 @@ get_header();
                     <!--major icon-->
                     <div class="major-icon">
                       
+                      <?php 
+                      $image = get_field('image_5');
+                      if( !empty( $image ) ): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                      <?php endif; ?>
+                      
                     </div>
+                    
+                    <!--major title-->
+                    <h4>Illustration</h4>
                     
                      <!--bottom left pixal-->
                     <div class="bottom-left"></div>
@@ -295,7 +344,7 @@ get_header();
                   
                   <h3><?php echo get_field('heading_3'); ?></h3>
                   
-                  <p><?php echo get_field('paragraph_3'); ?></p>
+                  <h1><?php echo get_field('paragraph_3'); ?></h1>
                   
                 </div>
 
