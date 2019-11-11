@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+  <div id="primary" class="content-area">
 		<main id="main" class="site-main">
       
       <section class="page-section-1">
@@ -40,18 +40,21 @@ get_header();
         
         <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
           
-          <div class="section-2">
+          <div class="section-2 page-section-2">
             
           </div>
           
-          <div class="section-3">
+          <!--contact section-->
+          <div class="section-3-about">
+
             <div class="container">
               <div class="row">
                 <div class="col">
-                  
+                  <h3>Big things to come...</h3>
                 </div>
               </div>
             </div>
+            
           </div>
           
         </div>

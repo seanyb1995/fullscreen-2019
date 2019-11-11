@@ -42,14 +42,45 @@ get_header();
             
           </div>
           
-          <div class="section-3">
-            <div class="container">
-              <div class="row">
-                <div class="col">
+          <!--contact section-->
+          <div class="section-3-about">
+
+            <div class="container section-3">
+
+              <div class="section-3-content">
+
+                <!--top left pixal-->
+                <div class="top-left"></div>
+
+                <!--top border-->
+                <div class="top"></div>
+
+                <!--top right pixal-->
+                <div class="top-right"></div>
+                
+                <!--about content-->
+                <div class="about-content">
+                  
+                  <h3 class="h3-about"><?php echo get_field('heading_1'); ?></h3>
+                  
                   <?php contactform_box(); ?>
+                  
                 </div>
+
+                <!--bottom left pixal-->
+                <div class="bottom-left"></div>
+
+                <!--bottom border-->
+                <div class="bottom"></div>
+
+                <!--bottom right pixal-->
+                <div class="bottom-right"></div>
+                
+                
               </div>
+              
             </div>
+            
           </div>
           
         </div>

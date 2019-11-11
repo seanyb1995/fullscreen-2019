@@ -73,7 +73,7 @@ get_header();
                 <!--about content-->
                 <div class="about-content">
                   
-                  <h3><?php echo get_field('heading_1'); ?></h3>
+                  <h3 class="h3-about"><?php echo get_field('heading_1'); ?></h3>
                   
                   <p><?php echo get_field('paragraph_1'); ?></p>
                   
@@ -99,7 +99,7 @@ get_header();
           <div class="section-3-about">
             
             <div class="section-3-moon">
-              <img src="<?php echo get_template_directory_uri() ?>/images/Moon.svg" alt="Moon"/>
+              <img src="<?php echo get_template_directory_uri() ?>/images/moon-new.svg" alt="Moon"/>
             </div>
 
             <div class="container section-3">
@@ -115,197 +115,225 @@ get_header();
                 <!--top right pixal-->
                 <div class="top-right"></div>
                 
-                <!--about content-->
+                
+                
+                <!--about content--><!-- !!!!! THE INNER CONTENT STARTS HERE !!!!! --><!-- !!!!! THE INNER CONTENT STARTS HERE !!!!! -->
                 <div class="graduate-content">
                   
                   <h3><?php echo get_field('heading_2'); ?></h3>
                   
-                  <!--digital design-->
-                  <div class="major"> 
-                    
-                    <!--top left pixal-->
-                    <div class="top-left"></div>
+                  <div class="container-fluid">
+                    <div class="row graduates-margin-outer">
+                      <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2dot4 graduates-margin-bottom">
+                        <a href="<?php echo home_url() ?>/digital-design">
+                          <!--digital design-->
+                          <div class="major"> 
 
-                    <!--top border-->
-                    <div class="top"></div>
+                            <!--top left pixal-->
+                            <div class="top-left"></div>
 
-                    <!--top right pixal-->
-                    <div class="top-right"></div>
-                    
-                    <!--major icon-->
-                    <div class="major-icon">
+                            <!--top border-->
+                            <div class="top"></div>
+
+                            <!--top right pixal-->
+                            <div class="top-right"></div>
+
+                            <!--major icon-->
+                            <div class="major-icon">
+
+                              <?php 
+                              $image = get_field('image_1');
+                              if( !empty( $image ) ): ?>
+                                  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                              <?php endif; ?>
+
+                            </div>
+
+                            <!--major title-->
+                            <h4>Digital Design</h4>
+
+                             <!--bottom left pixal-->
+                            <div class="bottom-left"></div>
+
+                            <!--bottom border-->
+                            <div class="bottom"></div>
+
+                            <!--bottom right pixal-->
+                            <div class="bottom-right"></div>
+
+                          </div>
+                        </a>
+                      </div>
                       
-                      <?php 
-                      $image = get_field('image_1');
-                      if( !empty( $image ) ): ?>
-                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                      <?php endif; ?>
+                      <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2dot4 graduates-margin-bottom">
+                        <a href="<?php echo home_url() ?>/games-animation-design">
+                          <!--games and animation design-->
+                          <div class="major"> 
+
+                            <!--top left pixal-->
+                            <div class="top-left"></div>
+
+                            <!--top border-->
+                            <div class="top"></div>
+
+                            <!--top right pixal-->
+                            <div class="top-right"></div>
+
+                            <!--major icon-->
+                            <div class="major-icon">
+
+                               <?php 
+                              $image = get_field('image_2');
+                              if( !empty( $image ) ): ?>
+                                  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                              <?php endif; ?>
+
+                            </div>
+
+                            <!--major title-->
+                            <h4>Games and Animation</h4>
+
+                             <!--bottom left pixal-->
+                            <div class="bottom-left"></div>
+
+                            <!--bottom border-->
+                            <div class="bottom"></div>
+
+                            <!--bottom right pixal-->
+                            <div class="bottom-right"></div>
+
+                          </div>
+                        </a>
+                      </div>
                       
+                      <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2dot4 graduates-margin-bottom">
+                        <a href="<?php echo home_url() ?>/graphic-design">
+                          <!--graphic design design-->
+                          <div class="major"> 
+
+                            <!--top left pixal-->
+                            <div class="top-left"></div>
+
+                            <!--top border-->
+                            <div class="top"></div>
+
+                            <!--top right pixal-->
+                            <div class="top-right"></div>
+
+                            <!--major icon-->
+                            <div class="major-icon">
+
+                              <?php 
+                              $image = get_field('image_3');
+                              if( !empty( $image ) ): ?>
+                                  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                              <?php endif; ?>
+
+                            </div>
+
+                            <!--major title-->
+                            <h4>Graphic Design</h4>
+
+                             <!--bottom left pixal-->
+                            <div class="bottom-left"></div>
+
+                            <!--bottom border-->
+                            <div class="bottom"></div>
+
+                            <!--bottom right pixal-->
+                            <div class="bottom-right"></div>
+
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2dot4 graduates-margin-bottom">
+                        <a href="<?php echo home_url() ?>/creative-advertising">
+                          <!--creative advertising design-->
+                          <div class="major"> 
+
+                            <!--top left pixal-->
+                            <div class="top-left"></div>
+
+                            <!--top border-->
+                            <div class="top"></div>
+
+                            <!--top right pixal-->
+                            <div class="top-right"></div>
+
+                            <!--major icon-->
+                            <div class="major-icon">
+
+                              <?php 
+                              $image = get_field('image_4');
+                              if( !empty( $image ) ): ?>
+                                  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                              <?php endif; ?>
+
+                            </div>
+
+                            <!--major title-->
+                            <h4>Creative Advertising</h4>
+
+                             <!--bottom left pixal-->
+                            <div class="bottom-left"></div>
+
+                            <!--bottom border-->
+                            <div class="bottom"></div>
+
+                            <!--bottom right pixal-->
+                            <div class="bottom-right"></div>
+
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2dot4 graduates-margin-bottom">
+                        <a href="<?php echo home_url() ?>/illustration">
+                          <!--illustration design-->
+                          <div class="major"> 
+
+                            <!--top left pixal-->
+                            <div class="top-left"></div>
+
+                            <!--top border-->
+                            <div class="top"></div>
+
+                            <!--top right pixal-->
+                            <div class="top-right"></div>
+
+                            <!--major icon-->
+                            <div class="major-icon">
+
+                              <?php 
+                              $image = get_field('image_5');
+                              if( !empty( $image ) ): ?>
+                                  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                              <?php endif; ?>
+
+                            </div>
+
+                            <!--major title-->
+                            <h4>Photography and Illustration</h4>
+
+                             <!--bottom left pixal-->
+                            <div class="bottom-left"></div>
+
+                            <!--bottom border-->
+                            <div class="bottom"></div>
+
+                            <!--bottom right pixal-->
+                            <div class="bottom-right"></div>
+
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                    
-                    <!--major title-->
-                    <h4>Digital Design</h4>
-                    
-                     <!--bottom left pixal-->
-                    <div class="bottom-left"></div>
-
-                    <!--bottom border-->
-                    <div class="bottom"></div>
-
-                    <!--bottom right pixal-->
-                    <div class="bottom-right"></div>
-                    
-                  </div>
-                  
-                  <!--games and animation design-->
-                  <div class="major"> 
-                    
-                    <!--top left pixal-->
-                    <div class="top-left"></div>
-
-                    <!--top border-->
-                    <div class="top"></div>
-
-                    <!--top right pixal-->
-                    <div class="top-right"></div>
-                    
-                    <!--major icon-->
-                    <div class="major-icon">
-                      
-                       <?php 
-                      $image = get_field('image_2');
-                      if( !empty( $image ) ): ?>
-                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                      <?php endif; ?>
-                      
-                    </div>
-                    
-                    <!--major title-->
-                    <h4>Games and Animation</h4>
-                    
-                     <!--bottom left pixal-->
-                    <div class="bottom-left"></div>
-
-                    <!--bottom border-->
-                    <div class="bottom"></div>
-
-                    <!--bottom right pixal-->
-                    <div class="bottom-right"></div>
-                    
-                  </div>
-                  
-                  <!--graphic design design-->
-                  <div class="major"> 
-                    
-                    <!--top left pixal-->
-                    <div class="top-left"></div>
-
-                    <!--top border-->
-                    <div class="top"></div>
-
-                    <!--top right pixal-->
-                    <div class="top-right"></div>
-                    
-                    <!--major icon-->
-                    <div class="major-icon">
-                      
-                      <?php 
-                      $image = get_field('image_3');
-                      if( !empty( $image ) ): ?>
-                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                      <?php endif; ?>
-                      
-                    </div>
-                    
-                    <!--major title-->
-                    <h4>Graphic Design</h4>
-                    
-                     <!--bottom left pixal-->
-                    <div class="bottom-left"></div>
-
-                    <!--bottom border-->
-                    <div class="bottom"></div>
-
-                    <!--bottom right pixal-->
-                    <div class="bottom-right"></div>
-                    
-                  </div>
-                  
-                  <!--creative advertising design-->
-                  <div class="major"> 
-                    
-                    <!--top left pixal-->
-                    <div class="top-left"></div>
-
-                    <!--top border-->
-                    <div class="top"></div>
-
-                    <!--top right pixal-->
-                    <div class="top-right"></div>
-                    
-                    <!--major icon-->
-                    <div class="major-icon">
-                      
-                      <?php 
-                      $image = get_field('image_4');
-                      if( !empty( $image ) ): ?>
-                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                      <?php endif; ?>
-                      
-                    </div>
-                    
-                    <!--major title-->
-                    <h4>Creative Advertising</h4>
-                    
-                     <!--bottom left pixal-->
-                    <div class="bottom-left"></div>
-
-                    <!--bottom border-->
-                    <div class="bottom"></div>
-
-                    <!--bottom right pixal-->
-                    <div class="bottom-right"></div>
-                    
-                  </div>
-                  
-                  <!--illustration design-->
-                  <div class="major"> 
-                    
-                    <!--top left pixal-->
-                    <div class="top-left"></div>
-
-                    <!--top border-->
-                    <div class="top"></div>
-
-                    <!--top right pixal-->
-                    <div class="top-right"></div>
-                    
-                    <!--major icon-->
-                    <div class="major-icon">
-                      
-                      <?php 
-                      $image = get_field('image_5');
-                      if( !empty( $image ) ): ?>
-                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                      <?php endif; ?>
-                      
-                    </div>
-                    
-                    <!--major title-->
-                    <h4>Illustration</h4>
-                    
-                     <!--bottom left pixal-->
-                    <div class="bottom-left"></div>
-
-                    <!--bottom border-->
-                    <div class="bottom"></div>
-
-                    <!--bottom right pixal-->
-                    <div class="bottom-right"></div>
-                    
                   </div>
                   
                 </div>
+                
+                <!-- !!!!! THE INNER CONTENT ENDS HERE !!!!! --><!-- !!!!! THE INNER CONTENT ENDS HERE !!!!! -->
 
                 <!--bottom left pixal-->
                 <div class="bottom-left"></div>
@@ -342,7 +370,7 @@ get_header();
                 <!--about content-->
                 <div class="about-content">
                   
-                  <h3><?php echo get_field('heading_3'); ?></h3>
+                  <h3 class="h3-date"><?php echo get_field('heading_3'); ?></h3>
                   
                   <h1><?php echo get_field('paragraph_3'); ?></h1>
                   
@@ -383,7 +411,7 @@ get_header();
                 <!--about content-->
                 <div class="about-content">
                   
-                  <h3><?php echo get_field('heading_4'); ?></h3>
+                  <h3 class="h3-contact"><?php echo get_field('heading_4'); ?></h3>
                   
                   <?php contactform_box(); ?>
                   

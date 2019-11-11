@@ -26,9 +26,9 @@
                   <a class="fullscreen-custom-logo-constraints" href="<?php echo home_url() ?>" rel="home"><?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' ) ?></a>
                 </div>
                 <div class="col-12">
-                  <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                  <a href="https://www.facebook.com/fullscreen2019/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                  <a href="https://www.instagram.com/fullscreen_2019/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="https://twitter.com/digdesigncurtin?lang=en" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                 </div>
               </div>
 <!--             </div> -->

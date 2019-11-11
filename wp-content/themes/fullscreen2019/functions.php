@@ -128,6 +128,8 @@ function fullscreen2019_scripts() {
   
   wp_enqueue_style( 'bootstrap4', get_template_directory_uri() . '/css/Bootstrap/bootstrap.min.css' ); //BOOTSTRAP
   
+  wp_enqueue_style( 'bootstrap-custom-grid-5', get_template_directory_uri() . '/css/Bootstrap/custom-bootstrap-grid-5.css' ); //Custom 5 Grid
+  
   wp_enqueue_script('jquery', false, array(), false, false);
 
 	wp_enqueue_script( 'fullscreen2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
