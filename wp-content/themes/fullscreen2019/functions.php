@@ -166,7 +166,7 @@ function create_bootstrap_menu( $theme_location ) {
           $menu_list .= '</button>' ."\n";
           $menu = get_term( $locations[$theme_location], 'nav_menu' );
           $menu_items = wp_get_nav_menu_items($menu->term_id);
-          $menu_list .= '<div class="collapse navbar-collapse" id="navbarSupportedContent">' ."\n";
+          $menu_list .= '<div class="collapse navbar-collapse mobile-navbar-collapse" id="navbarSupportedContent">' ."\n";
           $menu_list .= '<ul class="navbar-nav ml-auto precision-mr-auto">' ."\n";
           foreach( $menu_items as $menu_item ) {
               if( $menu_item->menu_item_parent == 0 ) {

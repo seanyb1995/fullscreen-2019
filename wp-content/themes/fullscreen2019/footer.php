@@ -19,7 +19,7 @@
       
       <div class="container">
         <div class="row precision-row-block">
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 bottom-pixels">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 order-3 order-xl-1 bottom-pixels">
 <!--             <div class="container-fluid"> -->
               <div class="row">
                 <div class="col-12">
@@ -33,13 +33,13 @@
               </div>
 <!--             </div> -->
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 bottom-pixels">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-2 order-2 bottom-pixels">
             <?php get_footer_menu_items_main('primary'); ?>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 bottom-pixels">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 order-1 order-xl-3 bottom-pixels">
             <?php get_footer_menu_items_sub('primary'); ?>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 bottom-pixels">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 order-4 bottom-pixels">
             <div class="row">
               <div class="col-12">
                 <p>Search</p>

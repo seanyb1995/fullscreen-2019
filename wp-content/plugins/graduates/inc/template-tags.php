@@ -20,6 +20,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     $illustration = $_Post['Illustration'];
     $creative_advertising = $_POST['creative_advertising'];
     $major = $_POST['major'];
+    $specialisation = $_POST['specialisation'];
     $search = $_POST['search'];
     
     $favourite = $_POST['favourite'];
@@ -72,7 +73,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     if( $digital_design !=""){
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'specialisation',
+      'meta_key'		=> $specialisation,
       'meta_value'	=> $digital_design
     );
       
@@ -81,7 +82,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
      
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'specialisation',
+      'meta_key'		=> $specialisation,
       'meta_value'	=> $animation_and_game_design
     );    
       
@@ -90,7 +91,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
      
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'specialisation',
+      'meta_key'		=> $specialisation,
       'meta_value'	=> $graphic_design
     );    
       
@@ -99,7 +100,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
      
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'specialisation',
+      'meta_key'		=> $specialisation,
       'meta_value'	=> $illustration
     );  
       
@@ -108,7 +109,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
      
     $args = array(
       'post_type'		=> 'graduates',
-      'meta_key'		=> 'specialisation',
+      'meta_key'		=> $specialisation,
       'meta_value'	=> $creative_advertising
     );   
       
@@ -119,7 +120,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
         'meta_query' => array(
             'relation' => 'OR',
             array(
-                'key' => 'specialisation',
+                'key' => $specialisation,
                 'value' => $major,
                 'compare' => '='
             ),
@@ -184,12 +185,32 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
            // Get rid of the other data stored in the object, since it's not needed
            unset($term);
           } } ?>
-        <p>
           <?php 
-                   
-            $specialisation = get_field_object('specialisation'); 
-            echo $specialisation['value'];
+            $dd = get_field_object('dd_specialisation'); 
+            if($dd !=""){
+              echo '<p>' . $dd['value'] . '</p>';
+            }
     
+            $agd = get_field_object('agd_specialisation'); 
+            if($agd !=""){
+              echo '<p>' . $agd['value'] . '</p>';
+            }
+    
+            $gd = get_field_object('gd_specialisation'); 
+            if($gd !=""){
+              echo '<p>' . $gd['value'] . '</p>';
+            }
+    
+            $ca = get_field_object('ca_specialisation'); 
+            if($ca !=""){
+              echo '<p>' . $ca['value'] . '</p>';
+            }
+    
+            $i = get_field_object('i_specialisation'); 
+            if($i !=""){
+              echo '<p>' . $i['value'] . '</p>';
+            }
+
           ?>
         </p>
       </div>
