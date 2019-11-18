@@ -42,8 +42,9 @@ jQuery(document).ready(function($) {
         $('#graduates').html(data); // insert data
       }
   });
-  
-});
+ 
+
+ //-----------------------------------------------------------wishlist add --//    
 
 jQuery(document).on("click", 'input[type="checkbox"]', function(event) { 
     var sList = "";
@@ -66,4 +67,35 @@ jQuery(document).on("click", 'input[type="checkbox"]', function(event) {
         }
     });
     console.log (sList);
+});
+  
+//-----------------------------------------------------------showreel video page load--//  
+  var filter = jQuery('#form');
+    jQuery.ajax({
+      url:filter.attr('action'),
+      data:filter.serialize(), // form data
+      type:filter.attr('method'), // POST
+      success:function(data){
+        jQuery('#showreels').html(data); // insert data
+      }
+  });
+  
+});
+
+//   jQuery('input[type="checkbox"]').click(function(){
+//     jQuery('input[type="checkbox"]').not(this).prop("checked", false);
+// 	});
+  
+  jQuery('input[type="checkbox"]').change(function(){
+		var filter = jQuery('#form');
+    console.log(filter);
+		jQuery.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(), // form data
+			type:filter.attr('method'), // POST
+			success:function(data){
+				jQuery('#showreels').html(data); // insert data
+			}
+		});
+		return false;
 });

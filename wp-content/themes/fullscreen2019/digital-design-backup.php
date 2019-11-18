@@ -95,23 +95,7 @@ get_header();
                 </form>
 
                 <div id="graduates"></div>
-                  <input type="text" name="search" placeholder="search">
-                <input type="submit" id="submit" value="submit">
-                <div class="dropdown">
-                <button type="button" id= "major-btn" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                  MAJOR
-                </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">FRONT END DEVELOPMENT</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">BACK END DEVELOPMENT</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">UI/UX DESIGNER</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">FULL STACK DEVELOPER</a>
-                </div>
-            </div>  
-            </div>
+              
             </div>
             
           </div>

@@ -1,5 +1,5 @@
 .fullscreen-footer {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'SilkscreenRegular', cursive;
   background:black;
   padding-top:100px;
 //   padding-bottom:40px;
@@ -12,6 +12,8 @@
   }
   
   a {
+    background:black;
+    
     &:hover {
       opacity:0.8;
     }

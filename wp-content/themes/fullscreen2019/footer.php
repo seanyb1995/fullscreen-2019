@@ -52,7 +52,7 @@
         </div>
       </div>
     
-    </section>
+    </section><!-- Animation and Game Design, not Game and Animation. God dammit SEAN. -->
     
 	</footer><!-- #colophon -->
 </div><!-- #page -->

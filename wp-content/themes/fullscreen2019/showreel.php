@@ -68,13 +68,14 @@ get_header();
                   ?>
                   <input type="hidden" name="action" value="srfilter">
                   </form>
+                  <div id="showreels"></div>
                 </div>
               </div>
               
               <!-- Video DIV -->
               <div class="row">
                 <div class="col">
-                  <iframe src="https://www.youtube.com/embed/21kGmCsJ5ZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!--                   <iframe src="https://www.youtube.com/embed/21kGmCsJ5ZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                 </div>
               </div>
               

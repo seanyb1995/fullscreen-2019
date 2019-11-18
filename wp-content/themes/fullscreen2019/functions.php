@@ -137,9 +137,12 @@ function fullscreen2019_scripts() {
 	wp_enqueue_script( 'fullscreen2019-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
   
   wp_enqueue_script( 'ajax', get_template_directory_uri() . '/js/ajax.js', array(), '20191105', true );
+  
+  wp_register_script('fullscreen2019-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js','','20191118', true);
+  wp_enqueue_script('fullscreen2019-popper'); //POPPER
 
   wp_enqueue_script('fullscreen2019-bootstrap', get_template_directory_uri() . '/js/Bootstrap/bootstrap.min.js', array(), '20191105', true); //BOOTSTRAP
-
+  
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

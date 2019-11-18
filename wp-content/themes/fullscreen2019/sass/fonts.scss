@@ -1,5 +1,26 @@
 /*-------------------------------------------------------------
 Fonts
 --------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-// font-family: "Press Start 2P",cursive;
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap'); // font-family: "Press Start 2P",cursive;
+
+@font-face { // font-family: "Silkscreen" Regular
+  font-family: SilkscreenRegular;
+  src: url(../fonts/Silkscreen/slkscr-webfont.woff);
+}
+
+@font-face { // font-family: "Silkscreen" Bold
+  font-family: SilkscreenBold;
+  src: url(../fonts/Silkscreen/slkscrb-webfont.woff);
+  font-weight: bold;
+}
+
+@font-face { // font-family: "Silkscreen" Expanded Normal
+  font-family: SilkscreenExpandedNormal;
+  src: url(../fonts/Silkscreen/slkscre-webfont.woff);
+}
+
+@font-face { // font-family: "Silkscreen" Expanded Bold
+  font-family: SilkscreenExpandedBold;
+  src: url(../fonts/Silkscreen/slkscreb-webfont.woff);
+  font-weight: bold;
+}
