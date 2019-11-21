@@ -3,8 +3,8 @@ Global
 --------------------------------------------------------------*/
 
 // Font
-h1,h2,h3,h4,h5,h6 {
-  font-family: "SilkscreenRegular", cursive;
+h1,h2,h3,h4,h5,h6,input {
+  font-family: "SilkscreenRegular", cursive !important;
 }
 
 .call-to-action-button {
@@ -72,5 +72,18 @@ h1,h2,h3,h4,h5,h6 {
   img {
     max-width:200px;
     max-height:60px;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1300px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .dropdown-item {
+    white-space: normal !important;
   }
 }

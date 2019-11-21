@@ -12,7 +12,6 @@ add_action('wp_ajax_nopriv_srfilter', 'showreel_filter_function');
   function showreel_filter_function() {
   
     $major = $_POST['major'];
-    print_r($major);
     
     // setup the parameters for the query
     $tax_query = "";
@@ -44,12 +43,25 @@ add_action('wp_ajax_nopriv_srfilter', 'showreel_filter_function');
     }else{
         
     // else, just query all posts as normal (no filtering)
+      
+    $tax_query_major = array(
+    array(
+        'taxonomy' => 'major',
+        'field' => 'term_id',
+        'terms' => 8
+    )
+    );
+    
     $args = array(
         'post_type' => 'showreels',
         'orderby' => 'menu_order',
-        'order' => 'ASC'
+        'order' => 'ASC',
+        'tax_query' => $tax_query_major
     );
+      
     }
+      
+  
     
    // Check if filter is set if so query database by specialisation from POST
     

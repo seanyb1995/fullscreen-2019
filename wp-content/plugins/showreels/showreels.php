@@ -21,9 +21,7 @@ $showreels_plugin_root_url = plugin_dir_url(__FILE__);
 * 0. Setup product post type and product taxonomy
 */
 require_once( $showreels_plugin_root . 'inc/cpt-showreels.php' );
-require_once( $showreels_plugin_root . 'inc/tax-major.php' );
 add_action('init', 'showreels_post_type');
-add_action('init', 'showreels_major_taxonomy');
 /*
  * 4. Template tags
  * Require our Template tags file which contains all the functions for our 

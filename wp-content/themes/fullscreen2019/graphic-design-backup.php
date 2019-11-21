@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Creative Advertising
+ * Template Name: Graphic Design
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-  <div id="primary" class="content-area">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
       
       <section class="page-section-1">
@@ -44,11 +44,35 @@ get_header();
 
             <div class="container section-3">
               
-              <div class="row">
-                <div class="col-12">
-                  <h1 class="graduate-header-title"><?php echo get_the_title(); ?></h1>
-                </div>
-              </div>
+              <h3>Big things to come...</h3>
+
+              <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+                <?php
+                  $field_key = "field_5dc2500436ac7"; 
+                    $field = get_field_object($field_key);
+
+                    if( $field ) {
+                      echo '<select name="specialisation">';
+
+                      echo '<option value="">All</option>';
+
+                      foreach( $field['choices'] as $k => $v ) {
+                        echo '<option value="' . $k . '"';
+
+                        if ( $k == $specialisation ) {
+                          echo ' selected';
+                        }
+                        echo '>' . $v . '</option>';
+                      }
+
+                      echo '</select>';
+                    }
+                ?>
+                <input type="hidden" name="major" value="graphic_design">
+                <input type="hidden" name="action" value="myfilter">
+              </form>
+
+              <div id="graduates"></div>
               
               <div class="row">
                 <div class="col-12">
@@ -57,8 +81,7 @@ get_header();
                     
                     <div class="searchfunction">
                       <input type="text" name="search" id="searchinput" placeholder="Search">
-                      <input type="submit" id="searchbutton" value="Search" class="only-visible-desktop">
-                      <input type="submit" id="searchbutton" class="search only-visible-mobile" value="&#xf002;" />
+                      <input type="submit" id="searchbutton" value="Search">
                     </div>
                     
                     <div class="dropdown">
@@ -66,18 +89,18 @@ get_header();
 
                       <div class="dropdown-menu dropdown-menu-right graduates-dropdown">
                       <?php
-                        $field_key = "field_5dc250bee7c25"; 
+                        $field_key = "field_5dc2500436ac7"; 
                         $field = get_field_object($field_key);
 
                           if( $field ) {
                             echo '<a class="dropdown-item graduates-dropdown-label" href="#">';
-                            echo '<input type="checkbox" value="" name="creative_advertising" hidden/>';
+                            echo '<input type="checkbox" value="" name="graphic_design" hidden/>';
                             echo '<label for="all" >All</label>';
                             echo '</a>';
 
                             foreach( $field['choices'] as $k => $v ) {
                               echo '<a class="dropdown-item graduates-dropdown-label" href="#">';
-                              echo '<input type="checkbox" value="' . $k . '" name="creative_advertising" hidden/>';
+                              echo '<input type="checkbox" value="' . $k . '" name="graphic_design" hidden/>';
                               echo '<label for="' . $v . '" >' . $v . '</label>';
                               echo '</a>';
                             }
@@ -92,8 +115,8 @@ get_header();
                     </div>
                     <!--hidden variables for taxonomy query-->
                     <input type="hidden" name="favourite" id="favourite" value="">
-                    <input type="hidden" name="major" value="creative_advertising">
-                    <input type="hidden" name="specialisation" value="ca_specialisation">
+                    <input type="hidden" name="major" value="graphic_design">
+                    <input type="hidden" name="specialisation" value="gd_specialisation">
                     <input type="hidden" name="action" value="myfilter">
                     
                   </form>

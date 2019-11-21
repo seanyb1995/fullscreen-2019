@@ -45,10 +45,10 @@ get_header();
         <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
           
           <!--bottom path svg-->
-          <div class="section-2" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/bottom-path.svg');">
+          <div class="section-2" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/bottom-path2.svg');">
             
             <!--path svg-->
-            <div class="section-2-road" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/path_new.svg');">
+            <div class="section-2-road" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/path_new2.svg');">
             
             </div>
             
@@ -314,7 +314,7 @@ get_header();
                             </div>
 
                             <!--major title-->
-                            <h4>Photography and Illustration</h4>
+                            <h4>Illustration</h4>
 
                              <!--bottom left pixal-->
                             <div class="bottom-left"></div>

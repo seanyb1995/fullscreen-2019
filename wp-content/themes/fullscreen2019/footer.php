@@ -42,9 +42,6 @@
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 order-4 bottom-pixels">
             <div class="row">
               <div class="col-12">
-                <p>Search</p>
-              </div>
-              <div class="col-12">
                 <img class="curtin-logo" src="<?php echo get_template_directory_uri() ?>/images/curtin-university.svg" alt="Curtin University"/>
               </div>
             </div>

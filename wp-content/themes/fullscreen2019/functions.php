@@ -130,6 +130,8 @@ function fullscreen2019_scripts() {
   
   wp_enqueue_style( 'bootstrap-custom-grid-5', get_template_directory_uri() . '/css/Bootstrap/custom-bootstrap-grid-5.css' ); //Custom 5 Grid
   
+  wp_enqueue_style( 'fullscreen2019-normalize', get_template_directory_uri() . '/css/normalize.css' );
+  
   wp_enqueue_script('jquery', false, array(), false, false);
 
 	wp_enqueue_script( 'fullscreen2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -142,6 +144,10 @@ function fullscreen2019_scripts() {
   wp_enqueue_script('fullscreen2019-popper'); //POPPER
 
   wp_enqueue_script('fullscreen2019-bootstrap', get_template_directory_uri() . '/js/Bootstrap/bootstrap.min.js', array(), '20191105', true); //BOOTSTRAP
+  
+  wp_enqueue_script('fullscreen2019-graduates-dropdown', get_template_directory_uri() . '/js/graduates-dropdown.js', array(), '20191119', true); //Grads Dropdown JS
+
+  wp_enqueue_script('fullscreen2019-showreel-filter', get_template_directory_uri() . '/js/showreel-filter.js', array(), '20191121', true); //Showreel Filter JS
   
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -44,35 +44,72 @@ get_header();
 
             <div class="container section-3">
               
-              <h3>Big things to come...</h3>
+              <div class="row">
+                <div class="col-12">
+                  <h1 class="graduate-header-title"><?php echo get_the_title(); ?></h1>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-12">
+                  
+                  <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+                    
+                    <div class="searchfunction">
+                      <input type="text" name="search" id="searchinput" placeholder="Search">
+                      <input type="submit" id="searchbutton" value="Search" class="only-visible-desktop">
+                      <input type="submit" id="searchbutton" class="search only-visible-mobile" value="&#xf002;" />
+                    </div>
+                    
+                    <div class="dropdown">
+                      <button type="button" id= "major-btn" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Specialisation<span class="caret"></span></button>
 
-              <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-                <?php
-                  $field_key = "field_5dc2500436ac7"; 
-                    $field = get_field_object($field_key);
+                      <div class="dropdown-menu dropdown-menu-right graduates-dropdown">
+                      <?php
+                        $field_key = "field_5dc2500436ac7"; 
+                        $field = get_field_object($field_key);
 
-                    if( $field ) {
-                      echo '<select name="specialisation">';
+                          if( $field ) {
+                            echo '<a class="dropdown-item graduates-dropdown-label" href="#">';
+                            echo '<input type="checkbox" value="" name="graphic_design" hidden/>';
+                            echo '<label for="all" >All</label>';
+                            echo '</a>';
 
-                      echo '<option value="">All</option>';
+                            foreach( $field['choices'] as $k => $v ) {
+                              echo '<a class="dropdown-item graduates-dropdown-label" href="#">';
+                              echo '<input type="checkbox" value="' . $k . '" name="graphic_design" hidden/>';
+                              echo '<label for="' . $v . '" >' . $v . '</label>';
+                              echo '</a>';
+                            }
 
-                      foreach( $field['choices'] as $k => $v ) {
-                        echo '<option value="' . $k . '"';
+                            echo '</select>';
 
-                        if ( $k == $specialisation ) {
-                          echo ' selected';
-                        }
-                        echo '>' . $v . '</option>';
-                      }
+                          }
+                      ?>
 
-                      echo '</select>';
-                    }
-                ?>
-                <input type="hidden" name="major" value="graphic_design">
-                <input type="hidden" name="action" value="myfilter">
-              </form>
+                      </div>
 
-              <div id="graduates"></div>
+                    </div>
+                    <!--hidden variables for taxonomy query-->
+                    <input type="hidden" name="favourite" id="favourite" value="">
+                    <input type="hidden" name="major" value="graphic_design">
+                    <input type="hidden" name="specialisation" value="gd_specialisation">
+                    <input type="hidden" name="action" value="myfilter">
+                    
+                  </form>
+                
+                </div>
+              </div>
+              
+              <div class="row">
+                
+                <div class="col-12">
+              
+                  <div id="graduates"></div>
+                  
+                </div>
+              
+              </div>
               
             </div>
             

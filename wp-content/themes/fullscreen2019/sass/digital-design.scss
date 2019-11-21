@@ -1,0 +1,293 @@
+#filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  
+  @media screen and (max-width:767px) {
+    justify-content: center;
+  }
+  
+  @media screen and (min-width: 560px) {
+    
+    @media screen and (max-width:575px) {
+      max-width: 515px;
+    }
+  }
+    
+  
+  #major-btn {
+    border-color: rgba(0,0,0,0);
+    border-radius: 0px;
+    
+//     &:before,&:after {
+//       border:0px;
+//     }
+  }
+  
+  .searchfunction {
+    
+    @media screen and (max-width:767px) {
+      margin-bottom:20px;
+    }
+    
+    .only-visible-mobile {
+      
+      @media screen and (max-width:495px) {
+        font-family: FontAwesome !important;
+      }
+      
+      @media screen and (min-width:496px) {
+        display:none !important;
+      }
+    }
+    
+    .only-visible-desktop {
+      
+      @media screen and (max-width:495px) {
+        display:none !important;
+      }
+    }
+  }
+  
+#major-btn, 
+#searchbutton {
+    background: $button-background;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-family: 'SilkscreenRegular', cursive;
+    text-decoration: none; 
+    color: white;
+    cursor: pointer;
+    border-color: rgba(0,0,0,0);
+    border-radius: 0px;
+    //border-color: black;
+    box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+
+      &:hover,
+      &:focus {
+        background: $sec-button-background;
+        box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
+          }
+
+      &:active {
+        box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+        }
+
+//       &:before,
+//       &:after {
+//         content: '';
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         box-sizing: content-box;
+//         border:0px !important;
+//         }
+
+//       &:before {
+//         top: -$outline-width;
+//         left: 0;
+//         border-top: $outline-width black solid;
+//         border-bottom: $outline-width black solid;
+//         }
+
+//       &:after {
+// //         left: -$outline-width;
+//         left:-10px;
+//         top: 0;
+//         border-left: $outline-width black solid;
+//         border-right: $outline-width black solid;
+//         border-top: 0px;
+//         }
+
+      &--reset {
+        background: $reset-button-background;
+        box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $reset-shadow-color;
+
+          &:hover,
+          &:focus {
+            background: $reset-sec-button-background;
+            box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $reset-shadow-color;
+              }
+
+          &:active {
+            box-shadow: inset $shadow-width $shadow-width 0px 0px $reset-shadow-color;
+            }
+
+          }
+
+      &--proceed {
+        background: $alt-button-background;
+        box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $alt-shadow-color;
+
+          &:hover,
+          &:focus {
+            background: $alt-sec-button-background;
+            box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $alt-shadow-color;
+              }
+
+          &:active {
+            box-shadow: inset $shadow-width $shadow-width 0px 0px $alt-shadow-color;
+            }
+
+          }
+      
+  }
+  
+  #searchinput {
+    @include step1( 4px, white );
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    
+    @media screen and (max-width:767px) {
+      width: 200px;
+    }
+    
+    @media screen and (max-width:315px) {
+      width: 140px;
+    }
+  }
+  
+  #searchbutton {
+    border: none;
+    margin-left: 10px;
+  } 
+  
+  
+}
+
+.card {
+  @include step2v2( 4px, white, white );
+  width: 250px;
+  height: 410px;
+  background: white;
+  display: flex;
+  //justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+  border-radius: 0;
+  border: 2px solid white;
+  margin-bottom: 40px;
+
+  .major {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    .name {
+      @include step1( 4px, black );
+      width: auto;
+      height: auto;
+      background: blue;
+      position: relative;
+      margin: 0;
+      margin-right: 15px;
+
+      h3 {
+        color: white;
+        font-size: 0.75rem;
+//         margin: 0.5rem;
+        padding: 0;
+        text-transform: uppercase;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+
+    }
+    
+    #digital_design {
+      background: blue !important;
+    }
+    
+    #animation_and_game_design {
+      background: green !important;
+    }
+    
+    #graphic_design {
+      background: red !important;
+    }
+    
+    #creative_advertising {
+      background: orange !important;
+    }
+    
+    #illustration {
+      background: purple !important;
+    }
+    
+  }
+
+  .image {
+    position: relative;
+
+    img {
+      margin-top: 16px;
+      width: 100%;
+      //height: 200px;
+    }
+
+  }
+
+  .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 160px;
+
+    h3 {
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-size:20px;
+      text-align: center;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-family: helvetica;
+      color: grey;
+      font-size: 12px;
+      //margin-top: 12px;
+      margin-bottom:0px;
+      margin-top:0px;
+    }
+
+    #button {
+      text-decoration: none;
+      @include step1( 3px, black );
+      color: white;
+      background: blue;
+      border: none;
+      padding: 10px 50px;
+      text-transform: uppercase;
+      margin-top:20px;
+      font-family: 'SilkscreenRegular', cursive;
+    }
+
+  }
+
+}
+
+.graduates-dropdown {
+  
+  cursor:pointer;
+  font-family: 'SilkscreenRegular', cursive;
+  
+  label {
+    cursor:pointer;
+  }
+}
+
+.graduate-header-title {
+  color:white;
+}

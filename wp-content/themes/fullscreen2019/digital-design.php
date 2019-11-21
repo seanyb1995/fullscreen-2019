@@ -46,72 +46,76 @@ get_header();
           <div class="section-3-about">
 
             <div class="container section-3">
-
-              <div class="favourite">
-                <?php 
-                  if(isset($_SESSION["favourite"])) { 
-
-                    $favourites = $_SESSION['favourite']; 
-                    print_r($favourites);
-
-        //             $favourites = array_unique($favourites, SORT_REGULAR);
-
-                    foreach($favourites as $favourite){
-                      ?><p><?php echo $favourite['name']; ?></p><?php
-                    }          
-
-                  } 
-                  ?>
-                  </div>
-                <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-                  <?php
-                    $field_key = "field_5dc24f68cd814"; 
-                      $field = get_field_object($field_key);
-
-                      if( $field ) {
-                        echo '<select name="digital_design">';
-
-                        echo '<option value="">All</option>';
-
-                        foreach( $field['choices'] as $k => $v ) {
-                          echo '<option value="' . $k . '"';
-
-                          if ( $k == $specialisation ) {
-                            echo ' selected';
-                          }
-                          echo '>' . $v . '</option>';
-                        }
-
-                        echo '</select>';
-                      }
-                  ?>
-                  <input type="hidden" name="favourite" id="favourite" value="">
-                  <input type="hidden" name="major" value="digital_design">
-                  <input type="hidden" name="specialisation" value="dd_specialisation">
-                  <input type="hidden" name="action" value="myfilter">
-
-                  <input type="text" name="search" placeholder="search">
-                  <input type="submit" id="submit" value="submit">
-                </form>
-
-                <div id="graduates"></div>
-                  <input type="text" name="search" placeholder="search">
-                <input type="submit" id="submit" value="submit">
-                <div class="dropdown">
-                <button type="button" id= "major-btn" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                  MAJOR
-                </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">FRONT END DEVELOPMENT</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">BACK END DEVELOPMENT</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">UI/UX DESIGNER</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">FULL STACK DEVELOPER</a>
+              
+              <div class="row">
+                <div class="col-12">
+                  <h1 class="graduate-header-title"><?php echo get_the_title(); ?></h1>
                 </div>
-            </div>  
-            </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-12">
+                  
+                  <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+                    
+                    <div class="searchfunction">
+                      <input type="text" name="search" id="searchinput" placeholder="Search">
+                      <input type="submit" id="searchbutton" value="Search" class="only-visible-desktop">
+                      <input type="submit" id="searchbutton" class="search only-visible-mobile" value="&#xf002;" />
+                    </div>
+                    
+                    <div class="dropdown">
+                      <button type="button" id= "major-btn" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Specialisation</button>
+
+                      <div class="dropdown-menu dropdown-menu-right graduates-dropdown">
+                      <?php
+                        $field_key = "field_5dc24f68cd814"; 
+                        $field = get_field_object($field_key);
+
+                          if( $field ) {
+                            echo '<a class="dropdown-item graduates-dropdown-label" href="#">';
+                            echo '<input type="checkbox" value="" name="digital_design" hidden/>';
+                            echo '<label for="all" >All</label>';
+                            echo '</a>';
+
+                            foreach( $field['choices'] as $k => $v ) {
+                              echo '<a class="dropdown-item graduates-dropdown-label" href="#">';
+                              echo '<input type="checkbox" value="' . $k . '" name="digital_design" hidden/>';
+                              echo '<label for="' . $v . '" >' . $v . '</label>';
+                              echo '</a>';
+                            }
+
+                            echo '</select>';
+
+                          }
+                      ?>
+
+                      </div>
+
+                    </div>
+                    <!--hidden variables for taxonomy query-->
+                    <input type="hidden" name="favourite" id="favourite" value="">
+                    <input type="hidden" name="major" value="digital_design">
+                    <input type="hidden" name="specialisation" value="dd_specialisation">
+                    <input type="hidden" name="action" value="myfilter">
+                    
+                  </form>
+                
+                </div>
+              </div>
+              
+              <div class="row">
+                
+                <div class="col-12">
+              
+                  <div id="graduates"></div>
+                  
+                </div>
+              
+              </div>
+              
+              </div>
+            
             </div>
             
           </div>

@@ -54,13 +54,11 @@ get_header();
                   <?php
                     if( $terms = get_terms( array( 'taxonomy' => 'major', 'orderby' => 'name' ) ) ) : 
 
-                        echo '<input type="checkbox" value="" name="major" class="" id="all"/>';
-                        echo '<label for="all">All</label>';
-
                       foreach ( $terms as $term ) :
 
-                        echo '<input type="checkbox" value="' . $term->term_id .'" name="major" class="" id="' . $term->name .'"/>';
-                        echo '<label for="' . $term->name .'">' . $term->name .'</label>';
+                        echo '<input type="checkbox" value="' . $term->term_id .'" name="major" class="" id="' . $term->name .'" hidden/>';
+                        echo '<label class="showreel-checkbox" for="' . $term->name .'">' . $term->name .'</label>';
+                        echo '<div class="showreel-filter-divider"></div>';
 
                       endforeach;
                       echo '</select>';

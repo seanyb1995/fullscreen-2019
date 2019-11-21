@@ -21,7 +21,7 @@ $reset-shadow-color:  #8C2022;
   position:absolute;
   width:300px;
   right:40px;
-  bottom:-60px;
+  bottom: -120px;
   -webkit-animation: float-animation 3s infinite; /* Safari 4.0 - 8.0 */
   animation: float-animation 3s infinite;
 
@@ -104,6 +104,10 @@ $reset-shadow-color:  #8C2022;
         flex-direction: column;
         height: 100%;
         padding: 60px;
+        
+        h3 {
+              font-family: "SilkscreenBold",cursive !important;
+        }
         
         @media screen and (max-width:400px) {
           padding:20px;
@@ -315,6 +319,10 @@ $reset-shadow-color:  #8C2022;
   flex-direction: row;
   height: 100%;
   padding-top: 20px;
+  
+  h3 {
+        font-family: "SilkscreenBold",cursive !important;
+  }
   
   .graduates-margin-outer {
     @media screen and (min-width:1200px) {
