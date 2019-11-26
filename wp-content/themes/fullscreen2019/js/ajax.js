@@ -48,10 +48,17 @@ jQuery('input[type="checkbox"]').change(function(){
  //-----------------------------------------------------------wishlist add --//    
   
  jQuery(document).on("click", '.favourite-icon', function(event) { 
+   
+   jQuery('#favourite').val("");
+   
+   jQuery('#unset').val("");
+   
+   jQuery('#link').val("");
   
    var name = jQuery(this).children('.namevalue').val();
    
    var link = jQuery(this).children('.linkvalue').val();
+   
    
    jQuery('#favourite').val(name);
    
@@ -71,12 +78,24 @@ jQuery('input[type="checkbox"]').change(function(){
 
 });
   
- jQuery(document).on("click", '.favourite-icon', function(event) { 
-  
-   var name = jQuery(this).sibilings('.namevalue').val();
+ jQuery(document).on("click", '.unset', function(event) { 
    
-   jQuery('#favourite').val(name);
+   var name = jQuery(this).prev('.dropdown-item').text();
    
+   var link = jQuery(this).prev('.dropdown-item').attr('href');
+   
+   jQuery('#favourite').val("");
+   
+   jQuery('#unsetname').val("");
+   
+   jQuery('#unsetlink').val("");
+   
+   jQuery('#unsetlink').val("");
+
+   jQuery('#unsetname').val(name);
+   
+   jQuery('#unsetlink').val(link);
+
   var filter = jQuery('#wishlist');
   
   jQuery.ajax({

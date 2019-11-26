@@ -58,6 +58,8 @@ get_header();
                   
                   <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="wishlist">
                     <input type="text" name="favourite" id="favourite" value="" hidden/>
+                    <input type="text" name="unsetname" id="unsetname" value="" hidden/>
+                    <input type="text" name="unsetlink" id="unsetlink" value="" hidden/>
                     <input type="text" name="link" id="link" value="" hidden/>
                     <input type="hidden" name="action" value="wishlist">
                   </form>

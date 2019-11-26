@@ -382,8 +382,40 @@ add_action('wp_ajax_nopriv_wishlist', 'digital_design_wishlist_function');
   function digital_design_wishlist_function() {
     session_start();
     
+     $favourite = "";
+     $link = "";
+     $unset = "";
+     $key = "";
+    
      $favourite = $_POST['favourite'];
      $link = $_POST['link'];
+    
+    
+     $unsetname = $_POST['unsetname'];
+     $unsetlink = $_POST['unsetlink'];
+    
+    // set session graduate as an empty array
+//     $_SESSION['unset'] = array();
+    
+    if(($unsetname != "")){
+      
+      $_SESSION['unset'] = array(
+        'name' => $unsetname,
+        'link' => $unsetlink
+      );
+      
+      $unset = $_SESSION['unset'];
+
+      $key=array_search($unset,$_SESSION['favourite']);
+      
+      unset($_SESSION['favourite'][$key]);
+      
+      
+      $_SESSION["favourite"] = array_values($_SESSION["favourite"]);
+      
+//       session_destroy();
+      
+    }
     
     // if session variable favourite isn't set, make it an empty array
     if  ( ! isset($_SESSION['favourite'])) {
@@ -393,7 +425,7 @@ add_action('wp_ajax_nopriv_wishlist', 'digital_design_wishlist_function');
     // set session graduate as an empty array
     $_SESSION['graduate'] = array();
     
-    if(isset($favourite)) {
+    if(($favourite != "")) {
       
       $_SESSION['graduate'] = array(
         'name' => $favourite,
@@ -406,7 +438,6 @@ add_action('wp_ajax_nopriv_wishlist', 'digital_design_wishlist_function');
         
         $key=array_search($graduate,$_SESSION['favourite']);
         if($key!==false)
-        unset($_SESSION['favourite'][$key]);
         $_SESSION["favourite"] = array_values($_SESSION["favourite"]);
         
       }else{
@@ -422,8 +453,10 @@ add_action('wp_ajax_nopriv_wishlist', 'digital_design_wishlist_function');
 
       $favourites = $_SESSION['favourite']; 
       foreach($favourites as $favourite){
-        ?><a class="dropdown-item" href="<?php echo $favourite['link']; ?>"><?php echo $favourite['name']; ?></a><i class="unset fa fa-times" aria-hidden="true"></i>
-<?php
+        ?>
+          <a class="dropdown-item" href="<?php echo $favourite['link']; ?>"><?php echo $favourite['name']; ?></a>
+          <i class="unset fa fa-times" aria-hidden="true"></i>
+        <?php
       }          
 
     } 

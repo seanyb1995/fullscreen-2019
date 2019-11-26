@@ -68,6 +68,14 @@ $reset-shadow-color:  #8C2022;
 //         margin-bottom: 80px;
 //       }
       
+      .widget-area {
+        width:100%;
+        
+        .wpcf7-form {
+          width:100%;
+        }
+      }
+      
       @media screen and (min-width:1200px) {
         margin-top: 100px;
         margin-bottom: 100px;
@@ -110,7 +118,7 @@ $reset-shadow-color:  #8C2022;
         height: 100%;
         padding: 60px;
         
-        .contact-message {
+        .contact-message, .wpcf7-textarea {
           height:200px;
           width: 100%;
           border: none;
@@ -193,6 +201,11 @@ $reset-shadow-color:  #8C2022;
           background:black;
         }
         
+        .wpcf7-response-output {
+          margin-top: 80px;
+          color: white;
+        }
+        
         p,h6 {
           color: white;
         }
@@ -211,7 +224,7 @@ $reset-shadow-color:  #8C2022;
             outline:none;
           }
 
-          button {
+          button, .wpcf7-submit {
             background: $button-background;
             display: inline-block;
             position: relative;
@@ -224,6 +237,7 @@ $reset-shadow-color:  #8C2022;
             float: right;
             cursor: pointer;
             box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+            width:auto;
 
               &:hover,
               &:focus {
@@ -459,8 +473,8 @@ $reset-shadow-color:  #8C2022;
       
       img {
         width: 75%;
-        height: 75%;
-        max-width:100px;
+//         height: 75%;
+        max-width:200px;
       }
        
     }
