@@ -57,8 +57,8 @@ get_header();
                 <div class="col-12">
                   
                   <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="wishlist">
-                    <input type="text" name="favourite" id="favourite" value="" hidden>
-                    <input type="text" name="link" id="link" value="" hidden>
+                    <input type="text" name="favourite" id="favourite" value="" hidden/>
+                    <input type="text" name="link" id="link" value="" hidden/>
                     <input type="hidden" name="action" value="wishlist">
                   </form>
                   

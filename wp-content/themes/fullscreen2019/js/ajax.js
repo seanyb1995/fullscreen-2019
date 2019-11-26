@@ -46,68 +46,62 @@ jQuery('input[type="checkbox"]').change(function(){
  
 
  //-----------------------------------------------------------wishlist add --//    
-
-// jQuery(document).on("click", '#icon', function(event) { 
-  
-//     jQuery('#icon').each(function () {
-      
-//           var name = jQuery(this).siblings('.namevalue').val();
-      
-//           $('#favourite').val(name);
-      
-//           var link = jQuery(this).siblings('.linkvalue').val();
-      
-//           $('#link').val(link);
-          
-//           var filter = jQuery('#filter');
-//           jQuery.ajax({
-//             url:filter.attr('action'),
-//             data:filter.serialize(), // form data
-//             type:filter.attr('method'), // POST
-//             success:function(data){
-//               jQuery('#graduates').html(data); // insert data
-//             }
-//         });
-          
-//     });
-
-// });
   
  jQuery(document).on("click", '.favourite-icon', function(event) { 
   
-    var value = jQuery(this).val();
-    jQuery('input[value="' + value + '"]').prop("checked", true).trigger("change");
-    
+   var name = jQuery(this).children('.namevalue').val();
+   
+   var link = jQuery(this).children('.linkvalue').val();
+   
+   jQuery('#favourite').val(name);
+   
+   jQuery('#link').val(link);
+   
+  var filter = jQuery('#wishlist');
+  
+  jQuery.ajax({
+    url:filter.attr('action'),
+    data:filter.serialize(), // form data
+    type:filter.attr('method'), // POST
+    success:function(data){
+      jQuery('.wishlistDropdown').html(data); // insert data
+    }
+
+    }); 
 
 });
   
-// jQuery(document).on("click", '#icon', function(event) { 
+ jQuery(document).on("click", '.favourite-icon', function(event) { 
+  
+   var name = jQuery(this).sibilings('.namevalue').val();
+   
+   jQuery('#favourite').val(name);
+   
+  var filter = jQuery('#wishlist');
+  
+  jQuery.ajax({
+    url:filter.attr('action'),
+    data:filter.serialize(), // form data
+    type:filter.attr('method'), // POST
+    success:function(data){
+      jQuery('.wishlistDropdown').html(data); // insert data
+    }
 
-//   var filter = jQuery('#wishlist');
-  
-//   jQuery.ajax({
-//     url:filter.attr('action'),
-//     data:filter.serialize(), // form data
-//     type:filter.attr('method'), // POST
-//     success:function(data){
-//       jQuery('.wishlistDropdown').html(data); // insert data
-//     }
+    }); 
 
-//     });
+});
   
-// });
+  var filter = jQuery('#wishlist');
   
-//   var filter = jQuery('#wishlist');
-  
-//   jQuery.ajax({
-//     url:filter.attr('action'),
-//     data:filter.serialize(), // form data
-//     type:filter.attr('method'), // POST
-//     success:function(data){
-//       jQuery('.wishlistDropdown').html(data); // insert data
-//     }
+  jQuery.ajax({
+    url:filter.attr('action'),
+    data:filter.serialize(), // form data
+    type:filter.attr('method'), // POST
+    success:function(data){
+      jQuery('.wishlistDropdown').html(data); // insert data
+    }
 
-//     }); 
+    }); 
   
   
 //-----------------------------------------------------------showreel video page load--//  

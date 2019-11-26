@@ -151,6 +151,8 @@ function fullscreen2019_scripts() {
   
   wp_enqueue_script('fullscreen2019-lottie', get_template_directory_uri() . '/js/lottie.js', array(), '20191125', true); //Lottie JS
   
+  wp_enqueue_script('fullscreen2019-section-1-stars-background', get_template_directory_uri() . '/js/section-1-stars-background.js', array(), '20191126', true); //section-1-stars-background.js
+  
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

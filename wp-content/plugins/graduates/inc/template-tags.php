@@ -295,7 +295,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
              } 
            } 
           ?>
-          <label class="favourite-icon" value="<?php the_title(); ?>">
+          <label class="favourite-icon">
             <i id="icon" class="<?php
                                   session_start();
     
@@ -311,8 +311,8 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
                                   }
     
                                 ?>" aria-hidden="true"></i>
-            <!-- name value for wishlist-->
-            <input class="namevalue" type="checkbox" hidden/>
+            <!--name value for wishlist-->
+            <input class="namevalue" type="text" value="<?php the_title(); ?>" hidden/>
             <!--perma link value for wishlist-->
             <input class="linkvalue" type="text" value="<?php the_permalink(); ?>" hidden/>
           </label>
@@ -373,6 +373,7 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     </div>
 </div>
 <?php
+    wp_die();         
   }
 
 add_action('wp_ajax_wishlist', 'digital_design_wishlist_function'); // wp_ajax_{ACTION HERE}
@@ -421,10 +422,13 @@ add_action('wp_ajax_nopriv_wishlist', 'digital_design_wishlist_function');
 
       $favourites = $_SESSION['favourite']; 
       foreach($favourites as $favourite){
-        ?><a class="dropdown-item" href="<?php echo $favourite['link']; ?>"><?php echo $favourite['name']; ?></a><?php
+        ?><a class="dropdown-item" href="<?php echo $favourite['link']; ?>"><?php echo $favourite['name']; ?></a><i class="unset fa fa-times" aria-hidden="true"></i>
+<?php
       }          
 
     } 
+    
+    wp_die();
     
   }
 
