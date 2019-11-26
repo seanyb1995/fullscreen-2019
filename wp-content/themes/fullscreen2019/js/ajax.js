@@ -47,13 +47,17 @@ jQuery('input[type="checkbox"]').change(function(){
 
  //-----------------------------------------------------------wishlist add --//    
 
-// jQuery(document).on("click", 'input[type="checkbox"]', function(event) { 
-//     var sList = "";
-//     jQuery('input[type=checkbox]').each(function () {
-//         sList += "(" + jQuery(this).val() + "-" + (this.checked ? "checked" : "not checked") + ")";
-//         if(this.checked){
-          
-//           jQuery('#favourite').val(jQuery(this).val());
+// jQuery(document).on("click", '#icon', function(event) { 
+  
+//     jQuery('#icon').each(function () {
+      
+//           var name = jQuery(this).siblings('.namevalue').val();
+      
+//           $('#favourite').val(name);
+      
+//           var link = jQuery(this).siblings('.linkvalue').val();
+      
+//           $('#link').val(link);
           
 //           var filter = jQuery('#filter');
 //           jQuery.ajax({
@@ -65,10 +69,46 @@ jQuery('input[type="checkbox"]').change(function(){
 //             }
 //         });
           
-//         }
 //     });
-//     console.log (sList);
+
 // });
+  
+ jQuery(document).on("click", '.favourite-icon', function(event) { 
+  
+    var value = jQuery(this).val();
+    jQuery('input[value="' + value + '"]').prop("checked", true).trigger("change");
+    
+
+});
+  
+// jQuery(document).on("click", '#icon', function(event) { 
+
+//   var filter = jQuery('#wishlist');
+  
+//   jQuery.ajax({
+//     url:filter.attr('action'),
+//     data:filter.serialize(), // form data
+//     type:filter.attr('method'), // POST
+//     success:function(data){
+//       jQuery('.wishlistDropdown').html(data); // insert data
+//     }
+
+//     });
+  
+// });
+  
+//   var filter = jQuery('#wishlist');
+  
+//   jQuery.ajax({
+//     url:filter.attr('action'),
+//     data:filter.serialize(), // form data
+//     type:filter.attr('method'), // POST
+//     success:function(data){
+//       jQuery('.wishlistDropdown').html(data); // insert data
+//     }
+
+//     }); 
+  
   
 //-----------------------------------------------------------showreel video page load--//  
   var filter = jQuery('#form');

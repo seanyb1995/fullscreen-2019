@@ -11,4 +11,5 @@ jQuery(document).ready(function() {
       jQuery('input[value="' + value + '"]').prop("checked", true).trigger("change");
     }
   });
+  
 });

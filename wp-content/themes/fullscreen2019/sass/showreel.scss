@@ -30,6 +30,10 @@
         opacity:0.8;
       }
     }
+    
+    h1 {
+      color:white;
+    }
   }
   
   .showreel-checkbox {
@@ -39,7 +43,8 @@
     &:hover {
       cursor:pointer;
       transform:translateY(-1px);
-      transition:transform .3s ease-in-out;
+      transition:all .1s ease-in-out;
+      opacity:0.8;
     }
     
 //     &:after {
@@ -57,9 +62,12 @@
   }
   
   .showreel-filter-divider {
-    display:inline-block;
-    height:100%;
-    width:2px;
-    background:white;
+    display: inline-block;
+    height: 16px;
+    width: 2px;
+    top: 2px;
+    background: #fff;
+    position: relative;
+    margin-right: 20px;
   }
 }

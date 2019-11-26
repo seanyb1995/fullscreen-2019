@@ -23,40 +23,6 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     $specialisation = $_POST['specialisation'];
     $search = $_POST['search'];
     
-    $favourite = $_POST['favourite'];
-    
-    
-    
-    // if session variable favourite isn't set, make it an empty array
-    if  ( ! isset($_SESSION['favourite'])) {
-      $_SESSION['favourite'] = array();
-    } 
-    
-    // set session graduate as an empty array
-    $_SESSION['graduate'] = array();
-    
-    if(isset($favourite)) {
-      
-      $_SESSION['graduate'] = array(
-        'name' => $favourite
-      );
-      
-      $graduate = $_SESSION['graduate'];
-      
-//       if(in_array($graduate,$_SESSION['favourite'])){
-//         print_r("in");
-//         $key=array_search($graduate,$_SESSION['favourite']);
-//         if($key!==false)
-//         unset($_SESSION['favourite'][$key]);
-//         $_SESSION["favourite"] = array_values($_SESSION["favourite"]);
-//       }else{
-//         print_r("out");
-//         array_push($_SESSION['favourite'], $graduate);
-//       }
-      
-      
-    }
-    
     // setup the parameters for the query
     $tax_query = "";
     
@@ -329,10 +295,44 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
              } 
            } 
           ?>
+          <label class="favourite-icon" value="<?php the_title(); ?>">
+            <i id="icon" class="<?php
+                                  session_start();
+    
+                                  $wishlisted = get_the_title();
+
+                                  if(in_array($wishlisted,$_SESSION['favourite'])){
+                                    $key=array_search($wishlisted,$_SESSION['favourite']);
+                                    if($key!==false)
+                                      echo 'icon fa fa-star';
+                                      
+                                  }else{
+                                      echo 'icon fa fa-star-o';
+                                  }
+    
+                                ?>" aria-hidden="true"></i>
+            <!-- name value for wishlist-->
+            <input class="namevalue" type="checkbox" hidden/>
+            <!--perma link value for wishlist-->
+            <input class="linkvalue" type="text" value="<?php the_permalink(); ?>" hidden/>
+          </label>
         </div>
         <!--graduate image-->
         <div class="image">
-          <img src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/08/bitconnect-1.png" alt="graduate">
+        <?php 
+              $image = get_field('headshot_1');
+              if( !empty($image) ): ?>
+
+                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+        <?php endif; ?>
+        <?php 
+              $image = get_field('headshot_2');
+              if( !empty($image) ): ?>
+
+                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+        <?php endif; ?>
         </div>
         <!--graduate detail-->
         <div class="detail">
@@ -373,6 +373,59 @@ add_action('wp_ajax_nopriv_myfilter', 'digital_design_filter_function');
     </div>
 </div>
 <?php
+  }
+
+add_action('wp_ajax_wishlist', 'digital_design_wishlist_function'); // wp_ajax_{ACTION HERE}
+add_action('wp_ajax_nopriv_wishlist', 'digital_design_wishlist_function');
+
+  function digital_design_wishlist_function() {
+    session_start();
+    
+     $favourite = $_POST['favourite'];
+     $link = $_POST['link'];
+    
+    // if session variable favourite isn't set, make it an empty array
+    if  ( ! isset($_SESSION['favourite'])) {
+      $_SESSION['favourite'] = array();
+    } 
+    
+    // set session graduate as an empty array
+    $_SESSION['graduate'] = array();
+    
+    if(isset($favourite)) {
+      
+      $_SESSION['graduate'] = array(
+        'name' => $favourite,
+        'link' => $link
+      );
+      
+      $graduate = $_SESSION['graduate'];
+      
+      if(in_array($graduate,$_SESSION['favourite'])){
+        
+        $key=array_search($graduate,$_SESSION['favourite']);
+        if($key!==false)
+        unset($_SESSION['favourite'][$key]);
+        $_SESSION["favourite"] = array_values($_SESSION["favourite"]);
+        
+      }else{
+        
+        array_push($_SESSION['favourite'], $graduate);
+        
+      }
+      
+      
+    }
+    
+    if(isset($_SESSION["favourite"])) { 
+
+      $favourites = $_SESSION['favourite']; 
+      foreach($favourites as $favourite){
+        ?><a class="dropdown-item" href="<?php echo $favourite['link']; ?>"><?php echo $favourite['name']; ?></a><?php
+      }          
+
+    } 
+    
   }
 
  

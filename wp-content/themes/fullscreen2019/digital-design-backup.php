@@ -85,7 +85,7 @@ get_header();
                         echo '</select>';
                       }
                   ?>
-                  <input type="hidden" name="favourite" id="favourite" value="">
+                  <input type="hidden" name="favourite" id="wishlist" value="">
                   <input type="hidden" name="major" value="digital_design">
                   <input type="hidden" name="specialisation" value="dd_specialisation">
                   <input type="hidden" name="action" value="myfilter">

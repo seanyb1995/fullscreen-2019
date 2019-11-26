@@ -17,7 +17,7 @@ if ( ! function_exists( 'contactform_box' ) ) {
     <!--message input-->
     <div class="message">
       <h6>Message</h6>
-      <input type="textarea" id="email" name="email" value="<?php echo $email ?>" placeholder="Enter message">
+      <textarea class="contact-message" type="textarea" id="email" name="email" value="<?php echo $email ?>" placeholder="Enter message"></textarea>
     </div>
     <input type ="hidden" name="referer" value="<?php echo get_permalink() ?>">
     <button id="submit" type ="submit" name="submit" value="submit">Send</button>

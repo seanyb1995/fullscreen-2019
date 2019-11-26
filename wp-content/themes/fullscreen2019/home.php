@@ -18,6 +18,11 @@ get_header();
       <section class="section-1">
 
         <div class="section-1-stars">
+          
+          <div class="section-1-stars-background" id="section-1-stars-background">
+            
+          </div>
+          
           <!--sun svg-->
           <div class="section-1-sun" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/sun-assetv2.svg');">
             
@@ -45,7 +50,7 @@ get_header();
         <div class="section-2-stars" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/stars-bottom-final.svg');">
           
           <!--bottom path svg-->
-          <div class="section-2" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/bottom-path2.svg');">
+          <div class="section-2" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/bottom-path3.svg');">
             
             <!--path svg-->
             <div class="section-2-road" style="background-image: url('<?php echo get_template_directory_uri() ?>/images/path_new2.svg');">

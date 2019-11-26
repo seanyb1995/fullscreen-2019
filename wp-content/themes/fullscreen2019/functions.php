@@ -149,6 +149,8 @@ function fullscreen2019_scripts() {
 
   wp_enqueue_script('fullscreen2019-showreel-filter', get_template_directory_uri() . '/js/showreel-filter.js', array(), '20191121', true); //Showreel Filter JS
   
+  wp_enqueue_script('fullscreen2019-lottie', get_template_directory_uri() . '/js/lottie.js', array(), '20191125', true); //Lottie JS
+  
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

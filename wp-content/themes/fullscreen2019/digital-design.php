@@ -56,6 +56,12 @@ get_header();
               <div class="row">
                 <div class="col-12">
                   
+                  <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="wishlist">
+                    <input type="text" name="favourite" id="favourite" value="" hidden>
+                    <input type="text" name="link" id="link" value="" hidden>
+                    <input type="hidden" name="action" value="wishlist">
+                  </form>
+                  
                   <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
                     
                     <div class="searchfunction">
@@ -94,7 +100,6 @@ get_header();
 
                     </div>
                     <!--hidden variables for taxonomy query-->
-                    <input type="hidden" name="favourite" id="favourite" value="">
                     <input type="hidden" name="major" value="digital_design">
                     <input type="hidden" name="specialisation" value="dd_specialisation">
                     <input type="hidden" name="action" value="myfilter">

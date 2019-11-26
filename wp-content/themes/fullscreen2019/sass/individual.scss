@@ -10,10 +10,33 @@ Individual graduate
   flex-direction: column;
   position: relative;
   padding: 1rem;
+  
+  .individual-flex-direction-column {
+//     flex-direction:column;
+  }
 
   .graduate {
 //     display: flex;
 //     flex-direction: row;
+    
+    .individual_attributes {
+      margin-top:20px;
+      margin-bottom:20px;
+      //justify-content: center;
+      align-items: center;
+      
+      .attribute_container {
+        
+        .attribute-skill-level {
+          @include step1( 4px, black );
+          background:red;
+          margin:4px;
+          position:relative;
+          width:20px;
+          height:20px;
+        }
+      }
+    }
 
     .image {
 //       width: 50%;
@@ -43,9 +66,58 @@ Individual graduate
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 8px;
+      
+      .individual-majors {
+        display:flex;
+      }
+      
+      .name {
+        
+        @include step1( 4px, black );
+        width: auto;
+        height: auto;
+        background: blue;
+        position: relative;
+        margin: 0;
+        margin-right: 15px;
+        
+        h3 {
+          color: white;
+          font-size: 0.75rem;
+          margin: 0.5rem;
+          padding: 0;
+          text-transform: uppercase;
+          margin-top: 4px;
+          margin-bottom: 4px;
+          margin-left: 8px;
+          margin-right: 8px;
+        }
+      }
+      
+      #digital_design {
+        background: blue !important;
+      }
+
+      #animation_and_game_design {
+        background: green !important;
+      }
+
+      #graphic_design {
+        background: red !important;
+      }
+
+      #creative_advertising {
+        background: orange !important;
+      }
+
+      #illustration {
+        background: purple !important;
+      }
       
       .h3-title {
         font-size:2rem;
+        margin-top: 16px;
       }
 
       .major {
@@ -131,8 +203,14 @@ Individual graduate
             background: blue;
             position: relative;
             border: none;
-            
+            cursor:pointer;
             color: white;
+            outline:0;
+            
+            &:hover {
+              transform:translateY(-1px);
+              transition:transform .1s ease-in-out;
+            }
           }
 
         }

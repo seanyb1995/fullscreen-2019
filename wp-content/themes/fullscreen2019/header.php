@@ -32,6 +32,15 @@ session_start();
     
     <?php create_bootstrap_menu("primary"); ?><!-- #site-navigation -->
     
+    <!--wishlist-->
+    <div class="wrap">
+      <li>
+        <a class="wishlist"><i class="fa fa-star" aria-hidden="true"></i> Wishlist</a>
+        <div class="wishlistDropdown">
+        </div>
+      </li>
+    </div>
+    
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
