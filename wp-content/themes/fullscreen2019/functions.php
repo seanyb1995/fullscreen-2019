@@ -207,6 +207,7 @@ function create_bootstrap_menu( $theme_location ) {
               // end <li>
               $menu_list .= '</li>' ."\n";
           }
+          $menu_list .= '<li class="nav-item"><a class="wishlist nav-link text-white"><i class="fa fa-star" aria-hidden="true"></i> Wishlist</a></li>' ."\n";
           $menu_list .= '</ul>' ."\n";
           $menu_list .= '</div>' ."\n";
           $menu_list .= '</div><!-- /.container -->' ."\n";

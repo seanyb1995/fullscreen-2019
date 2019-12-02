@@ -239,7 +239,7 @@ get_header();
                                 
                                 <div class="portfolio">
                                   
-                                  <a href="<?php echo the_field('portfolio_url'); ?>" target="_blank"><input type="button" id="button" name="button" value="View"></input></a>
+                                  <a href="<?php echo the_field('portfolio_url'); ?>" target="_blank"><input type="button" id="button" name="button" value="View Portfolio"></input></a>
                                 
                                 </div>
                               

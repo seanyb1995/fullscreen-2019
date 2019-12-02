@@ -10,6 +10,9 @@ Individual graduate
   flex-direction: column;
   position: relative;
   padding: 1rem;
+  padding: 0px;
+  padding-top: 1rem;
+  padding-bottom: 16px;
   
   .individual-flex-direction-column {
 //     flex-direction:column;
@@ -34,6 +37,7 @@ Individual graduate
           position:relative;
           width:20px;
           height:20px;
+          margin-bottom: 20px;
         }
       }
     }
@@ -65,11 +69,17 @@ Individual graduate
       height:100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+//       justify-content: space-between;
       padding: 8px;
       
       .individual-majors {
         display:flex;
+      }
+      
+      .individual_body_text {
+        @media screen and (max-width:600px) {
+          font-size:14px;
+        }
       }
       
       .name {
@@ -117,7 +127,8 @@ Individual graduate
       
       .h3-title {
         font-size:2rem;
-        margin-top: 16px;
+        margin-top: 40px;
+        margin-bottom: 20px;
       }
 
       .major {
@@ -164,12 +175,19 @@ Individual graduate
       }
 
       .links {
-        display: flex;
-        flex-direction: row;
+        margin-top: auto;
+//         display: flex;
+//         flex-direction: row;
+        margin-bottom: 20px;
 
         .social {
-          width: 50%;
+//           width: 50%;
           text-align: left;
+          
+          @media screen and (max-width:773px) {
+            text-align:center;
+            margin-bottom: 20px;
+          }
 
           ul {
             margin: 0;
@@ -193,12 +211,16 @@ Individual graduate
         }
 
         .portfolio {
-          width: 50%;
+//           width: 50%;
           text-align: right;
+          
+          @media screen and (max-width:773px) {
+            text-align:center;
+          }
 
           input[type="button"] {
             @include step1( 4px, black );
-            width: 150px;
+            width: 170px;
             height: 40px;
             background: blue;
             position: relative;
@@ -206,6 +228,10 @@ Individual graduate
             cursor:pointer;
             color: white;
             outline:0;
+            
+            @media screen and (max-width:773px) {
+              width:100%;
+            }
             
             &:hover {
               transform:translateY(-1px);
@@ -222,11 +248,15 @@ Individual graduate
   }
 
   .projects {
+    
+    .image-cols {
+      margin-bottom:20px;
+    }
 
     img {
       width: 100%;
       height: auto;
-      margin: 1rem;
+//       margin: 1rem;
     }
 
   }
